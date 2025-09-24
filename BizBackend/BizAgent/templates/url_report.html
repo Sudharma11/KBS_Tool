@@ -5,19 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BizInsightAnalyzer - URL Report</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
+            color: #333;
         }
-
         .container {
             max-width: 800px;
             margin: 0 auto;
@@ -27,7 +22,6 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
-
         .header {
             background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
             color: white;
@@ -35,251 +29,93 @@
             text-align: center;
             position: relative;
         }
-
-        .header-logo {
+        .header-controls {
             position: absolute;
-            top: -20px;
-            right: 2%;
-            width: 150px;
-            height: 150px;
-            opacity: 0.9;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .header-logo:hover {
-            opacity: 1;
-            transform: scale(1.05);
-        }
-
-        .header-logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            /* filter: brightness(0) invert(1); Makes the logo white */
-        }
-
-        .header h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        .content {
-            padding: 40px 30px;
-        }
-
-        .form-section {
-            margin-bottom: 30px;
-        }
-
-        .form-group {
+            top: 20px;
+            right: 20px;
             display: flex;
-            gap: 15px;
-            align-items: flex-end;
+            gap: 10px;
         }
-
-        .input-wrapper {
-            flex: 1;
-        }
-
-        label {
-            display: block;
-            font-weight: 600;
-            color: #374151;
-            margin-bottom: 8px;
-            font-size: 0.95rem;
-        }
-
-        input[type="text"] {
-            width: 100%;
-            padding: 16px 20px;
-            border: 2px solid #e5e7eb;
-            border-radius: 12px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            background: #f9fafb;
-        }
-
-        input[type="text"]:focus {
-            outline: none;
-            border-color: #4f46e5;
-            background: white;
-            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
-        }
-
-        .btn {
-            padding: 16px 32px;
-            border: none;
-            border-radius: 12px;
-            font-size: 1rem;
-            font-weight: 600;
+        .btn-icon {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
             transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            text-decoration: none;
+            font-size: 1.2rem;
         }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-            color: white;
+        .btn-icon:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
         }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
+        .header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 10px; }
+        .header p { font-size: 1.1rem; opacity: 0.9; }
+        .content { padding: 40px 30px; }
+        .form-group { display: flex; gap: 15px; align-items: flex-end; }
+        .input-wrapper { flex: 1; }
+        label { display: block; font-weight: 600; color: #374151; margin-bottom: 8px; }
+        input[type="text"] {
+            width: 100%; padding: 16px 20px; border: 2px solid #e5e7eb;
+            border-radius: 12px; font-size: 1rem; transition: all 0.3s ease;
+            background: #f9fafb;
         }
-
-        .btn-primary:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
+        input[type="text"]:focus {
+            outline: none; border-color: #4f46e5; background: white;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
         }
-
-        .result-section {
-            margin-top: 30px;
-            display: none;
+        .btn {
+            padding: 16px 32px; border: none; border-radius: 12px;
+            font-size: 1rem; font-weight: 600; cursor: pointer;
+            transition: all 0.3s ease; display: inline-flex;
+            align-items: center; gap: 8px; text-decoration: none;
         }
-
-        .result-section.show {
-            display: block;
-            animation: fadeInUp 0.5s ease;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .status-card {
-            padding: 24px;
-            border-radius: 16px;
-            margin-bottom: 20px;
-        }
-
-        .status-loading {
-            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-            color: white;
-        }
-
-        .status-success {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            color: white;
-        }
-
-        .status-error {
-            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-            color: white;
-        }
-
+        .btn-primary { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); color: white; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3); }
+        .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; box-shadow: none; }
+        .result-section { margin-top: 30px; display: none; }
+        .result-section.show { display: block; animation: fadeInUp 0.5s ease; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .status-card { padding: 24px; border-radius: 16px; margin-bottom: 20px; }
+        .status-loading { background: linear-gradient(135deg, #fbbf24, #f59e0b); color: white; }
+        .status-success { background: linear-gradient(135deg, #10b981, #059669); color: white; }
+        .status-error { background: linear-gradient(135deg, #ef4444, #dc2626); color: white; }
+        .status-info { background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; }
         .downloads-section {
-            display: none;
-            background: #f8fafc;
-            border: 2px dashed #cbd5e1;
-            border-radius: 16px;
-            padding: 30px;
-            text-align: center;
-            margin-top: 20px;
+            display: none; background: #f8fafc; border: 2px dashed #cbd5e1;
+            border-radius: 16px; padding: 30px; text-align: center; margin-top: 20px;
         }
-
-        .downloads-section.show {
-            display: block;
-            animation: fadeInUp 0.5s ease 0.3s both;
-        }
-
-        .download-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
+        .downloads-section.show { display: block; animation: fadeInUp 0.5s ease 0.3s both; }
+        .download-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
         .download-btn {
-            background: white;
-            color: #4f46e5;
-            border: 2px solid #4f46e5;
-            padding: 14px 28px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            background: white; color: #4f46e5; border: 2px solid #4f46e5;
+            padding: 14px 28px; border-radius: 12px; text-decoration: none;
+            font-weight: 600; transition: all 0.3s ease;
+            display: flex; align-items: center; gap: 8px;
         }
-
-        .download-btn:hover {
-            background: #4f46e5;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
-        }
-
+        .download-btn:hover { background: #4f46e5; color: white; transform: translateY(-2px); }
         .loading-spinner {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            border-top-color: white;
-            animation: spin 1s ease-in-out infinite;
+            display: inline-block; width: 20px; height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3); border-radius: 50%;
+            border-top-color: white; animation: spin 1s ease-in-out infinite;
         }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        /* Responsive design for mobile */
-        @media (max-width: 768px) {
-            .header {
-                padding: 30px 20px 40px 20px;
-            }
-            
-            .header-logo {
-                width: 100px !important;
-                height: 35px !important;
-                top: 15px !important;
-                right: 20px !important;
-            }
-            
-            .header h1 {
-                font-size: 2rem;
-                margin-right: 120px; /* Make space for logo on mobile */
-            }
-            
-            .content {
-                padding: 30px 20px;
-            }
-            
-            .form-group {
-                flex-direction: column;
-                align-items: stretch;
-            }
-        }
+        @keyframes spin { to { transform: rotate(360deg); } }
     </style>
 </head>
 <body>
-                <!-- Logo in top right corner -->
-            <div class="header-logo">
-                <img src="https://kanini.com/wp-content/uploads/2022/06/Kanini-Logo.svg" alt="Kanini Logo" onerror="console.log('Failed to load Kanini logo from URL')">
-            </div>
     <div class="container">
         <div class="header">
-
-            
+            <div class="header-controls">
+                <button class="btn-icon" id="updateDataBtn" title="Update Kanini Data">
+                    <span id="updateIcon">🔄</span>
+                    <span id="updateSpinner" class="loading-spinner" style="display: none;"></span>
+                </button>
+            </div>
             <h1>BizInsightAnalyzer</h1>
             <p>Generate comprehensive business reports from company URLs</p>
         </div>
@@ -290,12 +126,7 @@
                     <div class="form-group">
                         <div class="input-wrapper">
                             <label for="urlInput">Company Website URL</label>
-                            <input 
-                                type="text" 
-                                id="urlInput" 
-                                placeholder="https://example.com" 
-                                required
-                            >
+                            <input type="text" id="urlInput" placeholder="https://example.com" required>
                         </div>
                         <button type="submit" class="btn btn-primary" id="generateBtn">
                             <span id="btnText">Generate Report</span>
@@ -309,13 +140,10 @@
                 <div class="status-card" id="statusCard">
                     <div id="statusContent"></div>
                 </div>
-
                 <div class="downloads-section" id="downloadsSection">
-                    <div style="font-size: 1.3rem; font-weight: 700; color: #1f2937; margin-bottom: 15px;">📄 Reports Generated Successfully!</div>
+                    <div style="font-size: 1.3rem; font-weight: 700; color: #1f2937; margin-bottom: 15px;">📄 Reports Ready!</div>
                     <div style="color: #6b7280; margin-bottom: 25px;">Click the buttons below to download your reports</div>
-                    <div class="download-buttons" id="downloadButtons">
-                        <!-- Download buttons will be inserted here -->
-                    </div>
+                    <div class="download-buttons" id="downloadButtons"></div>
                 </div>
             </div>
         </div>
@@ -323,127 +151,107 @@
 
     <script>
         function getCsrfToken() {
-            const cookies = document.cookie.split(';');
-            for (let cookie of cookies) {
-                const [name, value] = cookie.trim().split('=');
-                if (name === 'csrftoken') {
-                    return decodeURIComponent(value);
-                }
-            }
-            return '';
+            return document.cookie.split('; ').find(row => row.startsWith('csrftoken='))?.split('=')[1] || '';
+        }
+
+        const resultSection = document.getElementById("resultSection");
+        const statusCard = document.getElementById("statusCard");
+        const statusContent = document.getElementById("statusContent");
+        
+        function showStatus(type, title, message) {
+            resultSection.classList.add("show");
+            statusCard.className = `status-card status-${type}`;
+            statusContent.innerHTML = `<div><div style="font-weight: 600;">${title}</div><div style="opacity: 0.9;">${message}</div></div>`;
         }
 
         document.getElementById("urlForm").addEventListener("submit", async function(event) {
             event.preventDefault();
-
             const url = document.getElementById("urlInput").value;
-            const resultSection = document.getElementById("resultSection");
-            const statusCard = document.getElementById("statusCard");
-            const statusContent = document.getElementById("statusContent");
             const downloadsSection = document.getElementById("downloadsSection");
             const generateBtn = document.getElementById("generateBtn");
             const btnText = document.getElementById("btnText");
             const btnSpinner = document.getElementById("btnSpinner");
 
-            // Show loading state
-            resultSection.classList.add("show");
-            statusCard.className = "status-card status-loading";
-            statusContent.innerHTML = `
-                <div style="display: flex; align-items: center;">
-                    <span style="font-size: 1.2rem; margin-right: 10px;"></span>
-                    <div>
-                        <div style="font-weight: 600; margin-bottom: 5px;">Analyzing Website...</div>
-                        <div style="opacity: 0.9;">This may take a few moments while we process your request</div>
-                    </div>
-                </div>
-            `;
+            showStatus('loading', 'Analyzing Website...', 'This may take a few moments.');
             downloadsSection.classList.remove("show");
-
-            // Update button state
             generateBtn.disabled = true;
             btnText.textContent = "Processing...";
             btnSpinner.style.display = "inline-block";
 
             try {
-                const csrfToken = getCsrfToken();
-                console.log('CSRF Token:', csrfToken); // Debug log
-                console.log('Sending request to:', "/url-report/api/url-report/"); // Debug log
-                
-                const response = await fetch("/url-report/api/url-report/", {
+                const response = await fetch("/url-report/api/generate_report/", {
                     method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "X-CSRFToken": csrfToken
-                    },
+                    headers: { "Content-Type": "application/json", "X-CSRFToken": getCsrfToken() },
                     body: JSON.stringify({ url: url })
                 });
 
-                console.log('Response status:', response.status); // Debug log
                 const data = await response.json();
-
-                if (response.ok) {
-                    // Show success state
-                    statusCard.className = "status-card status-success";
-                    statusContent.innerHTML = `
-                        <div style="display: flex; align-items: center;">
-                            <span style="font-size: 1.2rem; margin-right: 10px;"></span>
-                            <div>
-                                <div style="font-weight: 600; margin-bottom: 5px;">Reports Generated Successfully!</div>
-                                <div style="opacity: 0.9;">${data.message}</div>
-                            </div>
-                        </div>
-                    `;
-
-                    // Show download section with buttons
-                    setTimeout(() => {
-                        const downloadButtons = document.getElementById("downloadButtons");
-                        downloadButtons.innerHTML = `
-                             <a href="/url-report/api/download-docx/target/" 
-                                class="download-btn" 
-                                download="target_company.docx">
-                                    📊 Target Company Report
-                                </a>
-                                <a href="/url-report/api/download-docx/comparison/" 
-                                class="download-btn" 
-                                download="comparison_report.docx">
-                                    📈 Comparison Report
-                                </a>
-                        `;
-                        downloadsSection.classList.add("show");
-                    }, 500);
-
-                } else {
-                    // Show error state
-                    statusCard.className = "status-card status-error";
-                    statusContent.innerHTML = `
-                        <div style="display: flex; align-items: center;">
-                            <span style="font-size: 1.2rem; margin-right: 10px;"></span>
-                            <div>
-                                <div style="font-weight: 600; margin-bottom: 5px;">Generation Failed</div>
-                                <div style="opacity: 0.9;">${data.error || 'An unexpected error occurred'}</div>
-                            </div>
-                        </div>
-                    `;
+                if (!response.ok) {
+                    throw new Error(data.error || `Server error: ${response.status}`);
                 }
+
+                showStatus('success', 'Success!', data.message);
+
+                setTimeout(() => {
+                    const downloadButtons = document.getElementById("downloadButtons");
+                    let buttonsHtml = '';
+                    if (data.target_report_file) {
+                        buttonsHtml += `<a href="/url-report/api/download/${data.target_report_file}/" class="download-btn">📊 Target Report</a>`;
+                    }
+                    if (data.comparison_report_file) {
+                        buttonsHtml += `<a href="/url-report/api/download/${data.comparison_report_file}/" class="download-btn">📈 Comparison Report</a>`;
+                    }
+                    if (data.financial_report_file) {
+                        buttonsHtml += `<a href="/url-report/api/download/${data.financial_report_file}/" class="download-btn">💰 Financial Report</a>`;
+                    }
+                    downloadButtons.innerHTML = buttonsHtml;
+                    downloadsSection.classList.add("show");
+                }, 300);
+
             } catch (error) {
-                // Show error state
-                statusCard.className = "status-card status-error";
-                statusContent.innerHTML = `
-                    <div style="display: flex; align-items: center;">
-                        <span style="font-size: 1.2rem; margin-right: 10px;"></span>
-                        <div>
-                            <div style="font-weight: 600; margin-bottom: 5px;">Request Failed</div>
-                            <div style="opacity: 0.9;">Network error: ${error.message}</div>
-                        </div>
-                    </div>
-                `;
+                console.error("Fetch Error:", error);
+                showStatus('error', 'Request Failed', 'A network or server error occurred. Please check the console.');
             } finally {
-                // Reset button state
                 generateBtn.disabled = false;
                 btnText.textContent = "Generate Report";
                 btnSpinner.style.display = "none";
             }
         });
+
+        // Event listener for the new update button
+        document.getElementById("updateDataBtn").addEventListener("click", async function() {
+            const updateBtn = this;
+            const updateIcon = document.getElementById("updateIcon");
+            const updateSpinner = document.getElementById("updateSpinner");
+
+            updateBtn.disabled = true;
+            updateIcon.style.display = "none";
+            updateSpinner.style.display = "inline-block";
+            showStatus('info', 'Updating Kanini Data...', 'The web scraper is running. This might take a minute.');
+
+            try {
+                const response = await fetch("/url-report/api/update-kanini-data/", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json", "X-CSRFToken": getCsrfToken() }
+                });
+                
+                const data = await response.json();
+                if (!response.ok) {
+                    throw new Error(data.error || `Server error: ${response.status}`);
+                }
+                
+                showStatus('success', 'Update Complete!', data.message);
+
+            } catch(error) {
+                console.error("Update Error:", error);
+                showStatus('error', 'Update Failed', 'Could not update the Kanini services data.');
+            } finally {
+                updateBtn.disabled = false;
+                updateIcon.style.display = "inline-block";
+                updateSpinner.style.display = "none";
+            }
+        });
     </script>
 </body>
 </html>
+
