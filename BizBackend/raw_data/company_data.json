@@ -1,0 +1,1311 @@
+{
+  "company": {
+    "id": "35633364",
+    "universalName": "kanini",
+    "name": "KANINI",
+    "website": "https://kanini.com",
+    "linkedinUrl": "https://www.linkedin.com/company/kanini/",
+    "foundedOn": {
+      "month": null,
+      "year": 2003,
+      "day": null
+    },
+    "employeeCount": 968,
+    "employeeCountRange": {
+      "start": 501,
+      "end": 1000
+    },
+    "followerCount": 64921,
+    "description": "KANINI is a digital transformation enabler, providing cutting-edge software services and solutions that help enterprises drive innovation and business growth. We create impeccable customer experiences through thoughtfully designed digital solutions that help improve our customer’s efficiency, scale, and revenues.\n\nWe specialize in Product Engineering, Data Analytics & AI, and ServiceNow consultation and implementation. We focus on empowering Banking & Financial Services, Healthcare, Manufacturing, and a few other industries to leverage new-age technologies and solutions by implementing agile development practices and a global delivery framework.\n \nWe build technology that puts humans first - in line with our core operating principle that technology is for people, not the other way around. The result is happier clients, partners, and employees.\n\nWe do all this by balancing our customers’ needs with our people’s aspirations, always putting humans first. It means:\n\n* We prioritize each individual’s personal goals.\n* We value relationships more than profits.\n* We treat our clients as partners.\n\nOur people come to work because it makes them happy. They smile more often. They love getting better at what they do. And our offices become a second home. Even as they spend more time away from it.\n\nIf you think all this is just as important to you, bring us your Energy, Intellect and Integrity. We’ll show you a happier way to work.",
+    "industries": [
+      {
+        "id": "4",
+        "name": "Computer Software",
+        "urn": "urn:li:fsd_industry:4"
+      }
+    ],
+    "specialities": [
+      "Agile Software Development",
+      "Cloud Computing",
+      "Data Science",
+      "Location Intelligence",
+      "GIS",
+      "ServiceNow",
+      "AI",
+      "Predictive Analytics",
+      "Product Engineering",
+      "Intelligent Automation",
+      "Data Analytics",
+      "IoT",
+      "Telehealth",
+      "Conversational AI",
+      "Field Service Management",
+      "Innovative",
+      "Digital 2.0",
+      "Transformation",
+      "Cloud services",
+      "Healthcare"
+    ],
+    "headquarter": {
+      "geographicArea": null,
+      "city": null,
+      "country": null
+    },
+    "locations": [
+      {
+        "country": "US",
+        "city": "Nashville",
+        "geographicArea": "Tennessee",
+        "line1": "25 Century Blvd",
+        "line2": "Ste. 602",
+        "postalCode": "37214",
+        "headquarter": true,
+        "description": "U.S. Headquarters",
+        "parsed": {
+          "text": "Nashville, TN, United States",
+          "countryCode": "US",
+          "regionCode": null,
+          "country": "United States",
+          "countryFull": "United States of America",
+          "state": "Tennessee",
+          "city": "Nashville"
+        }
+      },
+      {
+        "country": "IN",
+        "city": "Chennai",
+        "geographicArea": "Tamil Nadu",
+        "line1": "Rattha Tek Meadows, Old Mahabalipuram Road, Sholinganallur",
+        "line2": "No. 51, Tower - A, 1st Floor",
+        "postalCode": "600 119",
+        "headquarter": false,
+        "description": "India Operations",
+        "parsed": {
+          "text": "Chennai, India",
+          "countryCode": "IN",
+          "regionCode": null,
+          "country": "India",
+          "countryFull": "India",
+          "state": "Tamil Nadu",
+          "city": "Chennai"
+        }
+      }
+    ],
+    "funding": null,
+    "pageVerified": true
+  },
+  "company_posts": [
+    {
+      "id": "7372313076261371904",
+      "content": "Stay tuned to learn more about Caliber - A lean, intelligent Value-Based Care platform that fits your healthcare organization and fuels success. Check out: https://lnkd.in/gbTFv5uk \n\n#ValueBasedCare #HealthcareTechnology #CareGaps #HealthcareOutcomes #VBC #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7372146951825395712",
+      "content": "We are hiring for Architect Roles at KANINI!\n\nBe a part of the tech transformation where innovation, scalability, and intelligent solutions drive the future.\n\nOpen Positions:\n1. DevOps Architect\n2. .NET Architect\n3. ServiceNow Architect\n\nEligibility: 12+ years of experience\n\nLocations: Chennai | Bangalore | Pune | Coimbatore\n\nReady to design future-ready architectures, lead transformation journeys, and create real business impact?\n\nFor the DevOps Architect and NET Architect position, send your resume to Deepshikha.Saxena@kanini.com.\n\nFor the ServiceNow Architect position, send your resume to Deepthi.Samireddi@kanini.com \n\n#ServiceNow #devops #dotnet #architect #Kanini #happierwaytowork",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7371936346598408193",
+      "content": "Traditions, Teamwork, and Trust! That’s what makes KANINI truly special.\n \nOur teams across KANINI locations came together to celebrate Ethnic Day and our prestigious Great Place To Work certification! The atmosphere was bustling in vibrant colors and high spirits, while we took time to reflect on and cherish major highlights from the GPTW survey. \n \nOur employees’ immense response and heartfelt feedback motivate us to reach newer heights every day!\n\n#GreatPlaceToWork #HappierWaytoWork #WorkplaceCulture #TeamSpirit\n#KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7371210831147155456",
+      "content": "Have you explored Caliber? https://lnkd.in/gbTFv5uk \n\nFor too long, healthcare organizations pursuing value-based care have faced a common challenge: the tools are either too complex, too slow, or too costly to implement.\n\nAt KANINI, we built Caliber to change that.\n\nWe believe healthcare organizations — from ACOs and FQHCs to CINs and independent provider groups — deserve a better way to:\n➡Close care gaps faster\n➡Enable risk stratification and SDOH integration\n➡Drive contract-aligned outcomes — without months of setup\n\nThe result? A lean, intelligent VBC platform that fits your organization and fuels your success. Stay tuned to learn more about Caliber.\n\n#Caliber #VBC #HealthcareTechnology #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7370780465672282112",
+      "content": "New Blog Post Alert!\n\nConfused about choosing the right Microsoft Fabric subscription for your enterprise? In our latest blog post, https://lnkd.in/gGCA9NhP we decode various Fabric capacities and pricing models to help you make the right choice. \n \nAs Fabric offers both Pay-As-You-Go and Long-Term billing options, enterprises have the liberty to purchase what works best for them. \n \nConnect with us to learn more.  \n\n#MicrosoftFabric #DataPlatform #EnterpriseData #CloudPricing #DataStrategy #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7369779035100467203",
+      "content": "Caliber is where value meets velocity. Stay tuned for more updates!\nhttps://lnkd.in/gbTFv5uk \n\n#Caliber #ValueBasedCare #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7369330898623717381",
+      "content": "Check out our latest success story: https://lnkd.in/gKTquT4u  \n \nDiscover how we modernized a leading healthcare solutions provider 's analytics platform with Databricks - improving risk identification, efficiency, and compliance.   \n \nIf you’re also struggling with complex and difficult-to-manage data pipelines, lack of unified data governance and manual workflows, speak to our experts. Optimize cost and performance of your data platform!\n\n#Databricks #DataAnalytics #HealthcareData #DataModernization #CostOptimization #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7368692104933359620",
+      "content": "Introducing Caliber — A Purpose-Built Platform for Value-Based Care Excellence. Learn more: https://lnkd.in/gbTFv5uk\n\nAfter years of consulting with healthcare organizations on their value-based care (VBC) journeys, we saw a clear need: a platform that makes success in VBC simple, measurable, and scalable.\n\nThat’s why we created Caliber — a lightweight, plug-and-play solution built to help healthcare providers close care gaps, improve outcomes, reduce costs, and accelerate shared savings.\n\n✅Designed around the Quadruple Aim\n✅Zero disruption to current workflows\n✅Ready to deploy in just 4–6 weeks\n\nCaliber is where value meets velocity. Stay tuned for more updates!\n\n#Caliber #ValueBasedCare #HealthcareTechnology #HealthcareInnovation \n#KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7368571832825741313",
+      "content": "JSLovers Pune Meetup at KANINI!\n\nIt was a pleasure for KANINI to host the JSLovers Pune Meetup as the official venue partner at our Pune office on 23rd of August.\n\nThe Meetup brought together a vibrant community of developers and tech enthusiasts for insightful sessions on modern testing practices, web accessibility, and building inclusive, reliable applications — along with plenty of opportunities for networking and knowledge sharing.\n\n Event Highlights\n🎤 Engaging talks on modern JavaScript practices\n🤝 Community-led discussions and collaboration\n🚀 Enthusiasm and energy from participants eager to learn and share\n\nSpecial congratulations and thanks to Pranalee Chaudhari for her inspiring talk as one of the event speakers. 👏\n\nAt KANINI, we’re always excited to support communities that foster learning, collaboration, and innovation.\n\n#KANINIPune #JSLovers #JavaScriptCommunity #TechMeetup #DeveloperCommunity #TechEvents",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7368305341404471297",
+      "content": "Read our latest success story: https://lnkd.in/gcAnrtB3  \n \nLearn how we transformed manual vendor case management for a global IT services leader, cutting escalation time in half with ServiceNow and AI-powered automation.  \n\nConnect with us to streamline the manual dependencies in your vendor management processes and overcome bottlenecks in your resolution system.\n\n#ServiceNow #AIAutomation #CaseManagement #DigitalTransformation\n#KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7367156633069604865",
+      "content": "Around 50% of healthcare data goes untapped for analytics! Read our latest blog post https://lnkd.in/gcqmnag8 and make the most of your healthcare data with Microsoft Fabric’s healthcare data solutions.\n\nMicrosoft Fabric’s HIPAA-compliant pre-built healthcare data solutions allow OMOP Transformations, CMS Claims Data Transformations, Care Management + Patient Outreach Analytics, and much more.\n\nSolve your data challenges in healthcare now - connect with our experts to learn more.\n\nDon't forget to share your thoughts on the article as comments!\n\n#HealthcareData #MicrosoftFabric #HealthcareAnalytics #DataSolutions #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7366798062905692160",
+      "content": "Teamwork, Energy, and Learning in Action!\n\nAt KANINI, we believe nothing beats immersive learning. Our recent OBEL (Outbound Experiential Learning) programs in Coimbatore and Chennai brought out the best in our teams.\n\nKudos to our spirited KANINIans for making every session a delight. Watch them revel in high-energy activities, fun, and moments of reflection.\nThese OBEL programs are a testament to the zeal and spirit of our people.\n\n#LearningAndDevelopment #TeamBuilding #EmployeeEngagement #WorkplaceLearning #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7366440375374270464",
+      "content": "We’re proud to announce that KANINI is Great Place To Work® Certified™!\n\nThis recognition is more than just a badge. It reflects the voices of our people and reaffirms that at KANINI, we’re truly creating “A Happier Way to Work.”\n\nA big thank you to every KANINIan for making this possible. Together, let's continue to grow, thrive, and build many more milestones ahead.\n\n#KANINI #GreatPlaceToWork #EmployeeExperience #WorkplaceCulture  #CompanyCertification",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7366132244953911296",
+      "content": "Get ready to see the future of value-based care in action. Stay tuned for more!\n\n#KANINI #VBC",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7365690678917464064",
+      "content": "GenAI promises trillions in value. So why can’t most projects scale?\n\n72% of companies use AI, with $13.8B invested in 2024. Yet by 2025, 30% of GenAI projects could be dropped post-PoC (Gartner) and 42% GenAI initiatives risk abandonment.\n\nIn our latest video on \"Building AI-Powered Decision Systems at Scale\", our Chief Solutions Officer Anand Sivaraman Subramaniam reveals:\n\n➡Why promising GenAI pilots stall\n➡7 roadblocks — from data gaps to integration, hallucinations & compliance\n➡How to scale GenAI with a smarter approach\n\nWatch the full video to overcome production challenges and operationalize GenAI.\n\n#GenerativeAI #AIScale #AIDecisionSystems #AIIntegration #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7364619906966802432",
+      "content": "Check out our 5-step ServiceNow Governance Framework: https://lnkd.in/gzYvHgGy\n\nMaximize ServiceNow ROI and eliminate challenges and such as:\n\n➡Over-customization leading to skipped upgrades\n➡Inconsistent approach by multiple vendors\n➡Lack of unified governance\n➡Security vulnerabilities and upgrade fatigue\n\nSpeak to our experts to maintain the technical and operational health of your ServiceNow platform with this well-planned governance framework.\n\n#ServiceNow #ITGovernance #PlatformManagement\n#DigitalTransformation #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7363895102206865408",
+      "content": "What if you could consolidate your numerous ERP systems into a single view? \n\nWith Snowflake Manufacturing Data Cloud, supply chain consolidation couldn’t be made easier! \n\nIntegrate all of your ERPs into a single platform to gain key insights into Spend Analytics, Inventory Levels, and Fulfilment Status. \n \nTalk to our experts today to learn how Snowflake AI Data Cloud can help overcome manufacturing challenges like supply-demand volatility, rising costs, and social and environmental responsibility: https://lnkd.in/dRiDTRkK \n\n#ManufacturingDataCloud #SupplyChainInnovation #ERPIntegration\n#DataDrivenManufacturing #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7363183159665950720",
+      "content": "Stop wasting weeks on manual compliance checks! Automate PII Tagging & Compliance in your banking enterprise with Atlan.\n\nAtlan’s rule-based playbooks help: Automatically discover and tag sensitive data (PII), Mask PII data, manage access restrictions, and much more.\n\nWhat this means for a banking and financial services business? \n\n✅40% time savings on manual governance processes\n✅Rapid compliance workflows such as GDPR\n✅Significant reduction in human errors.\n\nConnect with our experts to learn how Atlan can help your organization in governance automation: https://lnkd.in/gzZTbEV2\n \n#BankingCompliance #DataGovernance #PIIProtection\n#KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7361720845167185920",
+      "content": "Read our latest success story:https://lnkd.in/gVW9nnAY \n\nDiscover how we improved IT request handling turnaround time for a video & wireless technology R&D leader with the power of ServiceNow automation.\n\nReady to streamline service requests and get real-time visibility with ServiceNow workflow automation? \n\n#ServiceNow #WorkflowAutomation #ITSolutions #DigitalTransformation\n#KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7361358409398411264",
+      "content": "Research shows that the global average cost of a data breach was $4.88 million! \n\nRead our latest bog post: https://lnkd.in/g3KQHpYD to learn how the strategic combination of Microsoft Fabric and Purview can be a game changer in securing your data estate. \n\nWith Microsoft Fabric and Purview integration, businesses can unify their data storage, analytics, and governance on a single platform, enhancing security and compliance with global standards like GDPR and HIPAA. \n\nConnect with us to learn more. \n\n#DataSecurity #MicrosoftFabric #Purview #DataGovernance\n#KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7361278720403267585",
+      "content": "We are hiring for Multiple Roles at KANINI!\n\nBe a part of the tech transformation where AI, Automation, and Data Science reshape the future.\n\nOpen Positions:\n1. Power Automate with GenAI and RPA Expert\n2. Data Scientist\n\nLocations: Chennai | Bangalore | Pune | Coimbatore\nExperience: 3–12 yrs (Mid, Senior, Lead)\n\nReady to work on solutions that automate processes, enable smarter decisions, and create real business value? \n\nSend your resumes to Ranjithkumar.Raghunathan@kanini.com.    \n\n\n#powerautomate #datascience #dataengineering #hiring #happierwaytowork #KANINI #AI #RPA",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7360674283645300737",
+      "content": "Ready to have AI agents running your workflows while you focus on strategy? \n\nRead our latest blog post: https://lnkd.in/dHFBFxVT to explore what ServiceNow Agentic AI can do for your organization. \n\nReports state that ServiceNow AI agents reduce the average handling time for complex cases by up to 52%! With built-in guardrails and AI control tower, businesses can autonomously execute workflows without compromising on security or compliance with ServiceNow. \n \nIf you are looking to future-proof your operations, this read is for you. \n\n#ServiceNowAI #AITransformation #WorkflowAutomation #DigitalTransformation #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7359546445181472768",
+      "content": "Data chaos holding back your AI strategy? Read our latest blog post:\nhttps://lnkd.in/g-wnDKmd \nto bring clarity and control to your data estate with Microsoft Fabric . \n\nMicrosoft Fabric is a unified data platform that brings together all your data needs: from storage to analytics and AI, into one seamless experience. If you are dealing with messy and scattered data, Microsoft Fabric could be the solution for you.\n\nSpeak to our experts to learn more.\n\n#MicrosoftFabric #DataStrategy #AIReadiness #DataManagement\n#KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7358821663104249857",
+      "content": "New Blog Post Alert! 📣📣\n\nRead: https://lnkd.in/gS7Ksz6i and find out how ServiceNow GenAI unlocks endless possibilities of transforming business outcomes.\n\nWe've covered:\n\n✅Key GenAI features in ServiceNow\n✅Use cases driving tangible ROI\n✅Kickstarting your GenAI journey with confidence\n\nWhether you are transitioning from manual systems or looking to boost your existing ServiceNow workflows, this blog post is for you.\n\n#ServiceNowGenAI #AITransformation #EnterpriseAutomation\n#GenerativeAI #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7358151840124841984",
+      "content": "Have you checked out Workato Go?\n\nWorkato Go is the first fully-connected enterprise search with deep action, combining AI-powered intelligent search, agentic execution, and enterprise integration - all in one platform.\n\nWant to explore Workato Go in action? Connect with our experts: https://lnkd.in/dRiDTRkK\n\n#WorkatoGo #AIIntegration #EnterpriseAutomation #IntelligentAutomation #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7357009759276855297",
+      "content": "Long-term ServiceNow users often struggle with sluggish performance and face difficulty in tapping into the latest updates and features. Some of the most pressing challenges are:\n\n⚠️Over-customization leading to skipped upgrades\n⚠️Inconsistent approach due to multiple vendors\n⚠️Lack of unified governance\n⚠️Security vulnerabilities and upgrade fatigue\n\nDoes this sound familiar to you? Connect with our ServiceNow experts – get a well-laid-out roadmap for your ServiceNow platform to perform to its true potential.\n\nLearn more: https:/ /https://lnkd.in/gvdS-EVG  \n\nSample ServiceNow Assessment Report Inside! \n\n#ServiceNow #ITTransformation #DigitalWorkflows #EnterpriseIT\n#KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7356284971285667841",
+      "content": "Want to tap into the power of live data to make faster decisions? Confluent can bridge the gap between live data streams and analytics to help you make real-time decisions quicker and simpler. \n\nWhat it means for your business?\n✔️Instant data tables, ready for analytics\n✔️Automatic schema handling, leading to reduced complexity and cost\n✔️Seamless AWS integration helps query for data directly from Athena, Redshift, SageMaker, etc.\n✔️Accelerated innovation and time-to-value\n\nChat with our team to explore how Confluent can simplify your data strategy and elevate real-time analytics capabilities: https://lnkd.in/g3gtbKDH  \n\n#ConfluentPartner #RealTimeAnalytics #DataStreaming #AWSIntegration\n#KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7355561051599331329",
+      "content": "Using Databricks? Here's something you might’ve missed.\n\nUnity Catalog - Databricks’ unified governance layer is now included at no additional cost for Premium and Enterprise tiers.\n\nIf you're not already leveraging it, here’s why it’s worth your attention:\n✅ Unified access control across all data & AI assets (structured, unstructured, ML)\n✅ Built-in data lineage and audit trails\n✅ Simplified compliance and governance\n\nWe’ve helped several customers get started with Unity Catalog in just a few days, with minimal disruption.\n\nCurious how it fits into your setup? Connect with us: https://lnkd.in/dRiDTRkK\n\n#Databricks #UnityCatalog #DataGovernance #DataSecurity #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7354473015306301441",
+      "content": "Incoherent data landscape hindering your organization’s compliance requirements?  \n\nAddress data discovery, governance and control issues with Microsoft Purview.  \n \nMicrosoft Purview helps you: \n ✔ Discover and classify sensitive data automatically \n ✔ Map data assets and trace end-to-end data lineage \n ✔ Apply unified governance across Microsoft 365, Azure, AWS, and more \n \nBe it in banking, healthcare or manufacturing - our experts at KANINI can help you deploy Microsoft Purview to create a secure, compliant, and well-governed data ecosystem.  \n\nConnect now: https://lnkd.in/dRiDTRkK\n\n#MicrosoftPurview #DataGovernance #ComplianceManagement\n#DataDiscovery  #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7354110606272053248",
+      "content": "Read our latest Success Story: https://lnkd.in/g87xFFFs  \n \nLearn how we enhanced ServiceNow ITSM & ITOM to help a legal advocacy organization achieve its digital transformation goals.  \n\nWith our team of ServiceNow experts offering continuous support and guidance, we facilitated effective platform utilization and optimization. This has enabled our client to achieve a greater degree of automation and service delivery.  \n\n#ServiceNow #ITSM #ITOM #PlatformOptimization#DigitalTransformation\n#KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7353768135218331649",
+      "content": "Join us for an exciting Walk-in Drive for Data Scientists!\nDate: Sat.26th July \nExp: 5- 9yrs (At least 5yrs mandatory)\nTime: 10 AM - 4 PM\nAddress: KANINI Office locations in India: https://lnkd.in/gC8aUw_n\n\nPre-registration is mandatory: https://shorturl.at/ZTb7b  \n\nWe’re also inviting experienced data professionals with 5+ years to share their details using the same form.\n\nThe shortlisted candidates will receive further communication with interview links and timings for an In-person interview. \n\nShowcase your skills, and explore a #HappierWayToWork at KANINI!\n\n#KANINI #hiring #datascientist #walkin #data",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7353724019361173507",
+      "content": "KANINI at IndeHub Hackathon Demo Day 2025!\n\nWe had the privilege of supporting the recent IndeHub Hackathon Demo Day as the official venue partner at our Bangalore office on July 19th. This event was a part of a multi-city innovation sprint held across 8 cities - Bengaluru, Hyderabad, Ahmedabad, Surat, Chennai, Kozhikode, Mumbai and Delhi!\n\nOrganized by IndeHub & Swift Bengaluru, the event brought together 50+ tech professionals from Microsoft, Zoho, PhonePe, Infosys, Morgan Stanley, and more.\n\nHighlights:\n🎤Talks by Prashant Sharma (Practice Head – Data Analytics & AI, KANINI) on AI’s real-world impact & Aarsh Patel (SDE – iOS, MakeMyTrip) on iOS innovation\n⚖️Judging panel included leaders from CRED, Mercari, Zoho, and more\n📱 App demos spanning AI tools & consumer apps\n🏆Finalists: Evolv AI & WordJam\n\nSpecial thanks to Adithya Balaji for all your support in making this event a great success. \n\nCatch a glimpse of this power-packed day of tech, talent, and transformative ideas!\n\n#indehub #hackathon #wwdc25 #swiftcommunity #iOS #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7353365139930124289",
+      "content": "We’re hiring Mid to Senior-Level Developers and Technical Leads for Java at our Coimbatore location.\n\nExperience: 3–15 years\n\nJoin us and lead exciting projects in Java!\nPlease send your resume to Deepshikha.Saxena@kanini.com\n\n#KANINI #java #hiring #happierwaytowork #Javalead",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7353023461176332288",
+      "content": "Why should financial services enterprises consider cloud migration? Read the blog post to find out: https://lnkd.in/dcDPdxFy\n\nA survey of CIOs and IT decision-makers globally finds that organizations have shifted a majority of their IT hosting to the cloud, on time and within budget.\n\nWith the right cloud migration partner, migrating to the cloud can prove to be a game-changer for BFS organizations. Speak to our experts to begin your cloud migration journey on the right track.\n\n#CloudMigration #FinancialServices #DigitalTransformation\n#BFSI #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7351619666739421185",
+      "content": "Part 3 Out Now! Watch the full video https://lnkd.in/duScK537 and learn about the timelines, investments, and strategic considerations you need to make GenAI work for your enterprise.\n \nAfter delving deep into GenAI use cases and the governance side of AI implementation in the last video, AI thought leader Dr. Tathagat Varma and KANINI's Chief Solutions Officer Anand Sivaraman Subramaniam go on to discuss some key points around:\n1️⃣ Setting realistic AI project timelines\n2️⃣Managing AI expectations vs reality\n3️⃣Awareness of strategic factors like market trends and regulatory risks\n4️⃣How executives should prepare to make investments, and more.\n\nStay connected for more such meaningful discussions and expert insights!\n\n#GenerativeAI #AITransformation #EnterpriseAI #FutureOfAI\n#AIDrivenInnovation #Thoughtleadership #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7351239262895304704",
+      "content": "While AI adoption is on the rise across healthcare, banking, manufacturing and other sectors, many enterprises still struggle to scale from idea to real-world impact.\n\nMicrosoft Azure AI Foundry accelerates AI adoption by enabling organizations to move from use-case exploration to full-scale deployment securely, responsibly, and faster than ever.\n\nIt provides a comprehensive toolkit to design, customize, and manage AI applications and agents using GitHub, Microsoft Visual Studio, Microsoft Copilot, and Microsoft Fabric —complete with APIs to support your integration needs.\n\nConnect with us to explore how Azure AI Foundry can transform your AI journey: https://lnkd.in/gC8aUw_n\n\n#AzureAI #ArtificialIntelligence #AIDevelopment #DigitalTransformation\n#KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7350917283403214851",
+      "content": "KANINI recognized for excellence in employee experience!\n\nWe are thrilled to announce that KANINI has been honored as the Winner in the ‘Employee Experience – Large Scale’ category at the 3rd edition of the ETHRWorld Employee Experience Awards, held on 11th July in Bangalore.\n\nThis prestigious recognition is a proud milestone in our journey toward building a people-first culture that empowers and elevates our team. The rigorous evaluation was based on well-rounded parameters, including creativity, innovation, strategy, measurable impact, and business outcome, ensuring a truly holistic recognition.\n\nAt KANINI, we believe that exceptional employee experiences are integral to both individual fulfillment and the business. This recognition reinforces our belief that when we invest in our people's well-being and growth, success naturally follows.\n\nA heartfelt thank you to every KANINIan. Your passion and commitment made this possible! \n\n#ETHR #EmployeeExperience #WorkplaceCulture #EmployerBranding\n#KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7350512428121550848",
+      "content": "Zero outages. Zero service desk incidents. 100% intelligent operations. \nThat’s the future ServiceNow is building with Agentic AI at its core.\n\nChange how work gets done with ServiceNow. Imagine transforming workflows across industries: \n✅ Automating hospital appointment scheduling\n✅ Personalizing product recommendations in real time\n✅ Proactively spotting server and network issues before they escalate\n\nAll powered within the ServiceNow platform.\n\nCurious how Agentic AI can transform your ServiceNow workflows? Learn more: https://lnkd.in/gA4degbu\n\n#ServiceNow #AIinIT #AgenticAI #DigitalTransformation #IntelligentAutomation #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7349399588530774017",
+      "content": "Ready to build in the semantic age? Read our latest blog post for insights on prompt engineering and vibe coding:\nhttps://lnkd.in/g3NF85uk\n\nBy next year, 80% of enterprise applications are predicted to be built by non-developers using AI-assisted development tools — prompts will lead the way.\n\nLearn interesting details from a recent project experience that clearly shows how issues can be fixed easily, and updates can be pushed to UAT in under 24 hours with prompt engineering and vibe coding — saving the project from major delays.\n\n#PromptEngineering #VibeCoding #AIDevelopment #LowCodeNoCode\n#KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7348719102649110529",
+      "content": "Turn healthcare data into action, even without a dedicated data team. Atlan empowers care teams to generate reports and uncover insights on their own – quickly and safely.  \n\nAtlan’s active metadata features enrich data assets and reduce manual effort. Self-service reporting and scheduled queries speed up analytics.\n \nWhether it’s tracking patient outcomes, streamlining care operations, or aligning across departments, Atlan enables: \n\n✔️ User-friendly, self-service analytics\n✔️ Governed access to reliable, approved data\n✔️ Faster, smarter decision-making across the board\n \nConnect with us to learn how Atlan can power self-service analytics in your healthcare organization:\nhttps://lnkd.in/dRiDTRkK\n\n#ActiveMetadata #DataInHealthcare  #HealthcareTechnology\n#HealthcareAnalytics #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7348299777610043392",
+      "content": "Watch Part 2 of our conversation on preparing enterprise data for AI success with Dean Clark, Executive VP - Customer Success at KANINI.\n\nDean shares valuable insights on how collaborative platforms and practices, powered by tools like Databricks, Snowflake or Microsoft, help transform clean data into AI-ready assets.\n\nDon’t miss the one key piece of advice he offers to enterprises starting their AI journey!\n\n#AITransformation #ArtificialIntelligence #TechTalk #FutureOfAI\n#KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7347950035440934912",
+      "content": "What’s New from the Databricks Data + AI Summit 2025?\n\nThe Databricks 2025 Summit was a powerhouse of innovation, packed with game-changing updates that reshape the future of data and AI. Here are just a few highlights you shouldn’t miss:\n\n✅Lakebase Architecture\n✅Databricks One, Genie AI/BI, and Agent Bricks\n✅Unity Catalog\n✅Lakeflow Designer \n\nCurious to see how these breakthroughs can help your business move faster with AI?\n\nConnect with our experts: https://lnkd.in/gFwpMZEF  \n\n#DatabricksSummit2025 #DataAndAI #LakehouseInnovation\n#GenAI #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7346471571072479235",
+      "content": "If you want to learn to identify high-value, business-driven GenAI Use Cases, then this video is for you!\n\nCatch a glimpse of Part 2: Implementing GenAI – Strategies, Challenges & Future Trends. Watch Full Video here: https://lnkd.in/gRZWcGQV\n \nAI thought leader, Dr. Tathagat Varma, and our Chief Solutions Officer, Anand Sivaraman Subramaniam, unravel:\n➡How to select the right GenAI use cases\n➡Importance of placing people at the center of GenAI strategy\n➡GenAI governance \n\nAnd more.\n\n💡Understand and address cognitive barriers to make your GenAI implementation journey successful.\n\n📌Stay tuned for Part 3!\n\n#GenerativeAI #AITransformation #EnterpriseAI #FutureOfAI\n#AIDrivenInnovation #Thoughtleadership #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7346208286238523394",
+      "content": "We are proud to see our CEO, Babu Krishnasamy, being recognized among the Top 20 CEOs defining the future of AI in 2025 by AIM Media House.\n\nThis is indeed a proud moment for the entire KANINI team. Babu’s relentless focus on innovation and purpose-driven leadership continues to steer KANINI toward making AI more accessible, responsible, and impactful for enterprises worldwide.\n\nHere’s to many more milestones ahead. Thank you, AIM!\n#Top20CEOs #AILeadership #KANINI #FutureOfAI #AIM #EnterpriseAI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7346137585938747393",
+      "content": "Our recent visit to the Sristi Village Foundation in Tindivanam was a great opportunity for KANINIans to contribute meaningfully to a community empowering specially-abled children through education, skill-building, and employment opportunities.\n\nWe donated 200 T-shirts, shared sweets & meals, and connected with the amazing individuals shaping this inclusive space.\n\nSristi is a shining example of dignity through opportunity. We’re proud to support this incredible mission and look forward to contributing to a more inclusive future, together.\n\n#KANINI #CSRInitiative #MakingADifference",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7345708581918314496",
+      "content": "Step into your next tech opportunity with KANINI’s Walk-In Drive this July!\n\nKANINI WALK- IN Drive July 2025\n\nChennai: Saturday, 5th July & Pune: Saturday,12th July\nTime: 10 AM – 4 PM\nMode: In-Person\nLocation Address: KANINI Chennai & Pune Office: https://lnkd.in/gC8aUw_n \n\nWe’re hiring professionals with 5yrs+ exp. for:\n1. .NET Backend Developer (Azure)\n2. .NET Developer with React/Angular\n\nPre-registration form: https://rb.gy/xxb85x  \n\nThe shortlisted candidates will receive further communication with interview links and timing.\n\nDon’t miss this opportunity to grow your career with KANINI!\n\n#KANINI #Hiring #WalkInDrive #BackendDeveloper #DotNet #React #Angular #Azure #HappierWayToWork",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7345356335519019008",
+      "content": "Your opportunity is still open! \nThe virtual drive has been extended for the data scientist role —bring your skills and make an impact at KANINI.\n\nDates: 1st July to 5th July (10 AM – 4 PM)\nRole: Data Scientist\nExperience: 5+ years\nMode: Virtual\nEligible Locations: Pune | Bangalore | Coimbatore | Chennai \n\nRegister to participate: https://rb.gy/f9hf49 \n\nThe shortlisted candidates will receive further communication with interview links and timing.\n\nBe part of a culture that values innovation, impact, and a #HappierWayToWork.\n\n#KANINI #Hiring #DataScience #VirtualDrive #DataScientist",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7343978846569828353",
+      "content": "Struggling with scattered vendor data?\nManufacturers need a smarter way to unify vendor data for faster, holistic decision-making.\n\nWith Workato, you can automate workflows and integrate data across ERPs, CRMs, and supply chain tools — all in one platform.\n\n✅ Real-time vendor insights\n✅ Centralized governance\n✅ Faster, smarter decisions\n\nLet’s explore how Workato can simplify your vendor management: https://lnkd.in/dRiDTRkK \n\n#VendorManagement #DataIntegration #AutomationSolutions\n#Workato #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7343666245549879296",
+      "content": "KANINI Virtual Walk-In Drive – Data Scientist\n\nLooking to apply your expertise in data and AI to real-world impact? Join our Virtual Walk-In Drive and take the next big leap with KANINI!\n\nDate: Saturday, 28th June (10 AM - 4 PM)\nRole: Data Scientist\nExperience Required: 5+ years\nMode: Virtual\n\nEligible Locations: Pune, Bangalore and Chennai\n\nPlease fill in the Pre-registration form to participate in the drive: https://rb.gy/f9hf49 \n\nBe part of a culture that values innovation, impact, and a #HappierWayToWork.\n\n#KANINI #Hiring #DataScience # #Virtualdrive #datascientist",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7343652856014565376",
+      "content": "At the Snowflake Summit 2025, Snowflake unveiled its evolution from a data warehouse to a full-stack AI ecosystem. Featuring innovations such as Snowflake Intelligence, Snowflake Horizon Catalog, SnowConvertAI and more, the platform is helping businesses move from insights to intelligent action — all within a single ecosystem.\n\nLearn how these latest Snowflake features can add value in your business: \nhttps://lnkd.in/dRiDTRkK \n\n#SnowflakeAI #DataCloud #EnterpriseAI #AIInnovation #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7343259515724754944",
+      "content": "Have you explored the latest Databricks Unity Catalog to bridge the gap between your data experts and business teams? It expands access beyond technical users, enabling business teams to tap into trusted metrics, drive insights, and build models faster. \n \nMake data a shared language in your organization. Learn more:\nhttps://lnkd.in/gFwpMZEF \n\n#DataGovernance  #LakehouseArchitecture #UnifiedAnalytics\n#Databricks #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7342876604462678017",
+      "content": "Still spending weeks uncovering the root cause of billing denials or rising readmissions?\n\nHealthcare players are changing that with Atlan’s active metadata platform.\n\nIt’s helping business and clinical teams:\n\n✅ Trace readmission rates and denial trends to their source\n✅ Pinpoint data issues across EHRs, billing, and population health systems\n✅ Uncover delays in discharge planning\n✅ Strengthen trust in clinical and regulatory reports\n\nData clarity is driving faster decisions and better outcomes.\n\nConnect with us to learn more: https://lnkd.in/dRiDTRkK\n\n#HealthcareAnalytics #DataObservability #EHRIntegration\n#Atlan #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7341824536922808321",
+      "content": "We’re expanding our ServiceNow team in India & Australia!\n\nOpen Positions:\nIndia: Business Analyst | HRSD Design Lead | ITOM\nSydney, Australia: ITSM | ITOM\nExperience: 4–10 years\n\nBe part of a team delivering impactful ServiceNow solutions across multiple modules.\n\nIf you’re interested or know someone who fits the role, send resumes to Deepthi.Samireddi@kanini.com\n \n#ServiceNow #ITSM #ITOM #BusinessAnalyst #HRSD #KANINI #India #Australia #happierwaytowork",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7341789433328783360",
+      "content": "Read the Customer Success Story: https://lnkd.in/gF9H2EK2\n\nSee how technology once again emerges as a potent solution to navigate the intricacies of the Transparency in Coverage (TIC) regulation, empowering organizations to tackle the large Machine-Readable Files (MRFs).\n\nWant to streamline the data-related processes in your organization to meet the transparency expectations of your stakeholders? Talk to us.\n\n#HealthcareTechnology #TransparencyInCoverage #DataManagement\n#HealthIT #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7341427053369430016",
+      "content": "Discover Success Story: https://lnkd.in/gUqGh_sX\n\nLearn how we have helped a well-known plant-based medicines company replace its legacy Zendesk environment with ServiceNow CSM platform, achieving customer experience transformation and unparalleled operational efficiency.\n\n#CustomerExperience #ServiceNow #DigitalTransformation\n#CSMSuccess #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7340990526625599488",
+      "content": "Watch Part 1 of our latest Tech Talk as Dean Clark, Executive Vice President - Customer Success at KANINI, explains why data prep is rudimentary in building great AI models.\n \n30% of AI project failures are due to bad data. With legacy data being a common hurdle, data cleansing and transformation are key in ensuring positive project outcomes.\n \nDean also highlights the need for tight collaboration between business and tech teams, automation, and much more.\n \nTune in for expert insights. Because good decisions start with good data.\n \nPart 2 Coming Soon!\n \n#AITransformation #ArtificialIntelligence #TechTalk #FutureOfAI\n#KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7340752595579285505",
+      "content": "Read Blog Post: https://lnkd.in/gn5YYDd\n\nMove from 'data silos' to 'data seamleass' state faster with Snowflake Data Cloud for Patient 360 in healthcare. What’s more? Securely share live, governed data from multiple on-premise and cloud-based systems.\n\nConnect with our experts to learn more.\n\n#DataDrivenHealthcare #Customer360 #CloudDataManagement\n#DataInteroperability #Snowflake #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7340375054792253441",
+      "content": "We're hiring for two exciting roles in Nashville/Denver — AI Solutions Engineer (GenAI & Image Processing) and Sr. Full Stack .NET Developer. \n\nJoin us to build cutting-edge tech in healthcare and enterprise solutions.\n\n\n1. AI Solutions Engineer – Generative AI & Image Processing\nLocation: Nashville, TN. Onsite | Duration: Long Term\n\nWork on real-time image discrepancy detection, GenAI workflows, RAG (Kendra, vector DBs), and LLM optimisation.\n\nSkills: Python, AWS (S3, Lambda, SQS), AutoGen, RAG, LLMs, ML, data analysis\nNice to have: OCR, graph-based extraction, and SHAP experience\n\n2. Sr. Full Stack .NET Developer\nExperience: 10yrs+\nLocation: Denver, CO / Nashville, TN – Onsite\nDuration: Long-Term | Contract to Hire / Full-time\n \nBuild cloud-based enterprise apps using .NET (ver6–8), Angular (ver15–17), and modern DevOps tools.\n\nSkills: C#, .NET Core, Web API, EF, SQL, Angular, PrimeNG, GCP/Azure, GitHub\nNice to have: Healthcare domain experience, Cerner CCL or Snowflake exposure and GitLab, Bootstrap, SDLC tools\n\nIf you're interested—or know someone who’d be a great fit—please share resumes at yuvaraj.d@kanini.com  \n\n#AIJobs #ML #GenerativeAI #LLM #Python #AWS #DotNet #Hiring #GCP #Azure #happierwaytowork #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7339256712660512768",
+      "content": "Fed up with app crashes? Read: https://lnkd.in/gMKXfWn7 \n\nDiscover the power of Mobile App Testing & Debugging – your ultimate solution for creating impeccable user experiences. Get insights on enhancing user retention and seamless performance. \n\n#MobileAppTesting #AppPerformance #UserExperience #BugFreeApps \n#KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7338890328629776385",
+      "content": "Read the Case Study: https://lnkd.in/g_GaJRMQ\n\nFind out how a leading renal care provider builds a SMART application to automate manual processes for registered nurses. The app significantly reduces the time required to complete their workflows, enabling more focus on delivering quality care.\n\n#HealthcareInnovation #PatientCare #HealthTech #NursingSolutions\n#KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7338527941145894912",
+      "content": "Get a cleaner, smarter, and future-ready CMDB — in just 3 weeks!\n\nYour CMDB should enable scale and service excellence, not slow it down! With our CMDB Express Clean-up, we help organizations move from discussion to deployment — fast.\n\nThe result? A high-performing CMDB that’s audit-ready and scalable.\n\nLet’s talk about turning your CMDB into a true enabler of IT and business outcomes.\n\nConnect with us: https://lnkd.in/gUxNScE7\n\n#ServiceNow #ITOperations #CMDB #DigitalTransformation #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7338165547404013569",
+      "content": "Manual redaction slowing you down? Read the Case Study: https://lnkd.in/giaWdYfd\n\nSee how a leading law firm in the US transformed its PII data redaction process with end-to-end automation.\n\n✅ 90–95% redaction accuracy\n✅ 70% reduction in manual effort\n✅ 50% faster processing with real-time updates\n\nIf you're looking to simplify your document processing and protect your sensitive data, discover how our tailored data and AI solutions can transform your workflows!\n\n#PIIRedaction #DataPrivacy #LegalTech #AIinLegal #DocumentAutomation #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7337803180476403712",
+      "content": "Read the Blog Post: https://lnkd.in/g7Eva4ie\n\nIf your organizations is grappling with slow development cycles, high dependency on skilled developers, and escalating operational costs, check out how Workato's Low-Code/No-Code Automation Platform can be a game-changer.\n\nCombine integration, automation, and AI-driven workflow management with Workato!\n\n#Workato #LowCodeNoCode #AutomationPlatform\n#WorkflowAutomation #IntegrationSolutions #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7336723599069716480",
+      "content": "Strengthen data compliance and prevent disruptions in your banking & financial services business. \n\nWith Atlan, you can track data lineage and organize data assets before implementation. \n\nKANINI & Atlan together empower BFS organizations to streamline processes and make data management more efficient for better compliance, customer experience and revenue growth.\n\nConnect with us: https://lnkd.in/gC8aUw_n\n\n#DataGovernance #FinancialServices #DataCompliance\n#Atlan #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7336361177129603073",
+      "content": "Read this blog post: https://lnkd.in/gnj2tV2v\n\nAs your organization prepares to integrate AI into their regular workflows to improve efficiencies and bolster innovation, a robust AI governance and risk management framework becomes critical to confidently adopt AI.\n\nChoose the right AI governance and risk management framework. Minimize risks-maximize the benefits of AI.\n\n#AIGovernance #AIRiskManagement #ResponsibleAI\n#AIStrategy #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7335998795253485568",
+      "content": "Explore the Success Story 👉 https://lnkd.in/gqj7X7ZS\n\nDiscover how a leading audit firm is redefining audit excellence with AI-powered Financial Document Intelligence.\n\n✅ Reduced manual effort\n✅ Smarter, high-quality recommendations\n✅ Built-in privacy controls\n✅ Scalable, future-ready solution\n\n#AIDrivenAudits #FinancialIntelligence #DocumentAutomation\n#AuditTransformation #GenAI #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7335636438689947649",
+      "content": "Are you getting the most out of your ServiceNow platform? Check out our blog post https://lnkd.in/gjAJbQTm for some game-changing insights!\n\nDiscover our 3-step approach to maximizing the value of your ServiceNow investments and optimizing platform utilization. \n\n#ServiceNow #PlatformOptimization #ITSM #PerformanceAnalytics\n#DigitalTransformation #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7335274025775992832",
+      "content": "Are you looking for a Databricks Partner to accelerate your data and digital transformation journey?\n\nConnect with us: https://lnkd.in/gFwpMZEF\n\nKANINI + Databricks – Partners in powering data-driven innovation! \n\n#Databricks #DatabricksPartner #DigitalInnovation #DataDriven #AIandAnalytics #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7334179312687792128",
+      "content": "Struggling with fragmented, ungoverned datasets that slow down care coordination and reporting in healthcare?\n\nAtlan helps you package key datasets as governed, documented data products, assign stewards, quality scores, and refresh logic, and do much more.\n\nTogether, KANINI and Atlan create confident decisions in care coordination, outreach, and performance reporting. \n\n#ATLAN #Performancereporting #Healthcare #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7334140487437537280",
+      "content": "Join KANINI’s Data Innovation Team – Immediate Hiring!\n\nWe’re expanding our dynamic team of data experts and looking for seasoned professionals who can join us immediately to shape the future of data excellence.\n\nOpen Positions:\n1. Sr. Data Scientist: 12+ years\n2. Data Engineer: 7+ years\n\nApply Today!\nIf you are passionate about making a real impact in the data space, send your resume to Deepshikha.Mahato@kanini.com. \n\n#hiring #happierwaytowork #KANINI #dataengineer",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7333816886427557888",
+      "content": "Is your legacy application failing to streamline your healthcare facility audits?\n\nRead our latest customer success story: https://lnkd.in/gdKS-YK8 \n\nExplore how a renal care leader optimized facility management across its vast network of dialysis centers by modernizing their facility audit system. \n\n#Healthcare #FacilityManagement #DigitalTransformation\n#HealthTech #LegacyModernization #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7333454529192964096",
+      "content": "Why Should You Deploy Your Web Apps on Microsoft Azure? Read: https://lnkd.in/gQC4UcHF to find out.\n\nWeb applications deployed on-premises restrict scalability, availability, usability, maintenance, and cost-effectiveness. \n\nCheck out the 5 key benefits of deploying web apps on Microsoft Azure, best practices and more. \n\n#MicrosoftAzure #CloudComputing #WebApps #AzureDeployment\n#ScalableSolutions #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7333064403535204353",
+      "content": "Watch the IT ops transformation with ServiceNow in action!\n\nUnlock the story of a top semiconductor giant breaking free from spreadsheets and chaos.\n\nKANINI’s solution --> ServiceNow CMDB + Discovery = Automated asset tracking, 70% of challenges solved, and streamlined operations.\n\n#ServiceNow #ITOperations #DigitalTransformation #CMDB #EnterpriseIT\n#KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7332729730250485761",
+      "content": "Read the case study: https://lnkd.in/gCwvNYkP \n\nDiscover how a leading healthcare provider transformed their EHR system, automating the capture and summarization of doctor-patient interactions to eliminate manual inefficiencies and improve clinical accuracy.\n\nLooking to streamline documentation and enhance care delivery through healthcare tech innovation?\n \nConnect with our experts. \n\n#HealthcareInnovation #DigitalHealth #HealthIT #ClinicalDocumentation #AIinHealthcare #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7331642062158618624",
+      "content": "Part 1 Out Now: Implementing Generative AI – Strategies, Challenges & Future Trends\n\nJoin Dr. Tathagat Varma, AI thought leader & creator of the Theory of Cognitive Chasms, and Anand Sivaraman Subramaniam, Chief Solutions Officer at KANINI, as they unpack some hard truths about GenAI implementation.\n\n In this episode:\n✔ Only 54% of GenAI models make it from pilot to production\n✔ 70–85% of initiatives fail to meet their goals - common execution pitfalls\n✔ Macro challenges and steps to avoid GenAI failure\n\n🚨 Are organizations truly ready to unlock GenAI’s full potential?\n\nWatch Part 1 now to find out: https://lnkd.in/gNQvrBvK\n\n📌 Stay tuned for Part 2 – coming soon!\n\n#GenerativeAI #AITransformation #EnterpriseAI #FutureOfAI\n #AIDrivenInnovation #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7331224895265169411",
+      "content": "Facing challenges in forecasting logistics performance? Read our latest case study: https://lnkd.in/gZrhVPpV \n\nDiscover how we helped a global logistics leader leverage predictive analytics and machine learning to predict the empirical impact of Government Scores and other key factors on On-Time Performance (OTP).\n\nThe result was enhanced visibility, reduced delays, and optimized on-time delivery.\n\n#Logistics #PredictiveAnalytics #SupplyChain #MachineLearning #Innovation #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7330917825995255808",
+      "content": "Ready to implement ServiceNow ESM in your organization but figuring out where and how to start?\n\nRead our article https://lnkd.in/gtYvP54a to know how to extend ServiceNow ITSM outcomes with ServiceNow ESM across your organization.  \n\n#ServiceNowESM #DigitalTransformation #ITSM\n#EnterpriseServiceManagement #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7330826406962085888",
+      "content": "We are growing our technology team at KANINI and looking for passionate professionals to join our team.  \n\n1. Senior Full Stack Developer\n2. Backend Developer\n\nExperience: 5+ years\n\nWhat We Offer:\n\n1. A collaborative environment that values creativity and innovation\n\n2. Opportunities to work on groundbreaking projects shaping the future of technology\n\n3. Continuous learning and professional growth\n\nReady to make a significant impact? Apply Now. Send your resumes to ta.india@kanini.com\n\n\n#BackendDeveloper #DotNet #KANINI #happierwaytowork #hiring",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7330518218815471620",
+      "content": "🏆 We’re excited to share that KANINI has won the Outstanding Data Engineering Team Award at DES 2025 by AIM!\n\nThis recognition celebrates our team’s relentless focus on innovation and excellence in data engineering, analytics, and AI.\n\nThe Finkelstein Awards for Data Engineering Excellence 2025 have been a great opportunity for our data team to connect with top professionals in their field, showcase their work, and gain recognition from thousands of peers around the world.\n\nRepresenting Team KANINI at the event, Deepika Jayakodi, Technical Architect and Senior Manager – Data Analytics & AI, accepted the award on behalf of the team.\n\nThis is another shining example of our commitment to build human-first digital solutions that drive growth and efficiency across industries.\n\n#KANINI #FinkelsteinAwards #DataEngineeringExcellence #DES2025 #AIM #Innovation #AI #Analytics #DigitalTransformation #AwardWinner #TechForPeople",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7330193049446154240",
+      "content": "Read our latest customer success story: https://lnkd.in/gkrrJNq6 \n\nFind out how a top renal care organization streamlines facility operations with a next-gen app that transforms Facility Health Meetings across 200+ centers.\n \nLooking for expert guidance in adopting modern healthcare technology solutions? Connect with our experts. \n\n#HealthcareInnovation #DigitalHealth #HealthIT\n#FacilityManagement #HealthcareTransformation #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7329105874696785921",
+      "content": "Read this blog post: https://lnkd.in/gTmN9Zfg \n\nIt’s a comprehensive modernization guide for organizations facing challenges with their legacy .NET applications.\n\nUncover the transformative potential of Microsoft Azure to: \n✅  Enhance performance\n✅ Minimize costs\n✅ Fortify security\n\nGain a competitive edge! \n\n#DotNetModernization #AzureMigration #ModernizeWithAzure\n#LegacyToCloud #CloudNativeApps #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7328714369393983488",
+      "content": "Struggling with fragmented logistics data? \n\nRead our latest case study: https://lnkd.in/g_9Wcnyp  \n\nLearn how we helped a global logistics company consolidate complex datasets for smarter, and faster decision-making.\n\n#SupplyChain #LogisticsTechnology #KPIdashboard #DigitalLogistics #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7328424050802737154",
+      "content": "Our Chief Solutions Officer, Anand Sivaraman Subramaniam, recently took the stage at the Great International Developer Summit (GIDS) 2025 to deliver a powerful session on “Beyond LLMs: Building AI-powered Decision Systems at Scale.”\n \nIn this session, Anand explored how Agentic AI platforms are pushing the boundaries of automation by integrating Large Language Models (LLMs) with Large Action Models (LAMs) - enabling intelligent, goal-driven decisions.\n \nKey highlights included case studies to uncover the 'ReAct Framework' that combines reasoning and actions in real-time and practical strategies for architecting transparent, scalable & governable AI systems.\n \nWatch the full session: https://lnkd.in/gzeQFPKu and discover how your organization can move from experimentation to enterprise-ready AI.\n\n#GIDSBangalore2025  #Gids25 #Developersummit #KANINI",
+      "postedAgo": null,
+      "article": {
+        "title": "Beyond LLMs: Building AI-powered Decision Systems at Scale | KANINI",
+        "subtitle": "youtube.com",
+        "link": "https://youtu.be/2m-9w4QiQmM",
+        "linkLabel": "Open video: Beyond LLMs: Building AI-powered Decision Systems at Scale | KANINI on youtu.be",
+        "description": null,
+        "image": {
+          "url": "https://media.licdn.com/dms/image/sync/v2/D4D27AQFVxs92Xd-rEA/articleshare-shrink_1280_800/B4DZbPJ7.EH8AQ-/0/1747232211485?e=1758538800&v=beta&t=hkHQpu6oRhgKGdhHstgSZ3KQ1Cvk3adr18xh-CDiNrk",
+          "width": 640,
+          "height": 480,
+          "expiresAt": 1758538800000
+        }
+      },
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7328018757434388480",
+      "content": "Read our latest ITSM Tools comparison blog post: https://lnkd.in/gvKmQ32s\n\nDiscover what sets ServiceNow apart from other ITSM tools such as Jira, Freshservice, Zendesk, Ivanti (Cherwell), and SolarWinds.\n\nAlso learn how the right partner can enhance your IT transformation.\n\n#ITSM #ServiceNow #TechComparison #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7327617859126198272",
+      "content": "Struggling to turn healthcare data into actionable insights?\n\nRead our latest case study: https://lnkd.in/gBK4NiiG\n\nFind out how our client, a top renal care provider, revolutionizes clinical outcomes through data platform modernization, leveraging real-time analytics for better decision-making. \n\n#HealthcareInnovation #RealTimeAnalytics #DataPlatform\n#Renalcare #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7326570230250373120",
+      "content": "Read our blog post https://lnkd.in/g-Vq5_3w\n\nIdentify and eliminate your key integration challenges in healthcare, banking and manufacturing with the right iPaaS solution.\n\nWe've also leading iPaaS platforms such as Workato, MuleSoft, Boomi and Zapier to help you choose the solution that best fits your existing capabilities and future growth. \n\n#Ipaas #Workato #Mulesoft #Boomi #Zapier #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7326236568262758401",
+      "content": "Two days in, and #Knowledge25 is already exceeding expectations!\nLas Vegas is buzzing with ideas, innovation, and the power of putting AI to work.\n \nFrom visionary keynotes to immersive sessions and energizing hallway conversations, Team KANINI has been soaking in every opportunity to learn, connect, and explore what’s next in digital transformation.\n \nWe’re proud to be part of a global community that’s not just talking about AI, but activating it to drive real-world outcomes in customer experience, operational efficiency, and business growth.\n \nHuge thanks to ServiceNow for bringing together such a passionate and future-focused crowd. Bring on Day 3 — we’re ready for more!\n \nBabu Krishnasamy, Muthiah Natarajan, Rajendra Aduma, Arunachalam S., Rama Pappu, Anubhav Chaudhary, ServiceNow Partners.\n\n#KANINIatKnowledge25 #ServiceNow #Know25 #Knowledge25 #Servicenowknowledge25 #DigitalTransformation",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7325844353774485504",
+      "content": "Read this https://lnkd.in/gf-Ce2dr and leverage Microsoft Fabric to build a foundation for transformative AI.  \n \nMicrosoft Fabric  empowers small and medium-sized businesses prepare for AI by centralizing and improving the quality of data. \n\nReady to build high-quality AI applications that delight customers and empower employees? \n\n#MicrosoftFabric #AIPoweredBusiness #DataDriven #SMBTech #AITransformation #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7325494322806620160",
+      "content": "Here's Your Handbook to Building a Data Platform Architecture for Banking Success: https://lnkd.in/eM4XPZwA \n\nUnderstand why CIOs, CDOs, CTOs, and key business leaders within banking & financial services prioritize assessment of their current data platform architecture.\n\nWe’ve discussed modern alternatives such as microservices architecture, cloud-based data storage solutions, advanced stream processing technologies, strategies and much more in the eBook – check it out! \n\n#DataArchitecture #BankingTechnology #DigitalTransformation\n#KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7325080826491142145",
+      "content": "What’s your top priority for adopting new technology in your manufacturing business? We’d love to hear from you! \n\nTake the poll and join the conversation! \n\nClick here to learn more: https://lnkd.in/gMv5nD5e\n\n#DigitalTransformation #Manufacturing #Technology #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7324032436189757440",
+      "content": "Building a new web or a mobile app, or looking for transformation from legacy systems to cloud, or developing an IoT solution?\n\nExplore KANINI’s Product Engineering capabilities: https://lnkd.in/dHHetdKb\n\nScale your ideas with our unique engagement models and expertise in end-to-end product engineering.\n\n#ProductEngineering #CloudTransformation #IoTSolutions\n#DigitalTransformation #TechInnovation #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7323966634858041344",
+      "content": "We're hiring a Senior DevOps Engineer to drive cloud automation, infrastructure optimization, and deployment efficiency on AWS, Azure, or GCP!\n\nReady to make an impact? Send your resume to ta.india@kanini.com. \n\n#KANINI #happierwaytowork #hiring #devops #Aws #Azure #GCP",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7322516886913458176",
+      "content": "It’s poll time and we want to hear from you! \n\nGenAI is transforming the banking and financial services sector in remarkable ways - from AI-powered chatbots and virtual assistants to algorithms for loan default prediction and fraud detection, compliance automation, and more. \n\nWhich area in banking do you think benefits the most from GenAI? - Tell us in the poll.\n\n#GenAI #FinTech #AIinBanking #DigitalBanking #FinancialServices\n#KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7323307639252156418",
+      "content": "Read our blog post https://lnkd.in/gk8ZBkx3 \n\n44% of bank executives, small business owners, and consumers expect community banks to offer online account opening facilities. However, only 57% of community banks and credit unions do that. \n\nSay goodbye to legacy systems and infrastructure that restricts your digital transformation goals.\n\nLearn how a modern data platform can empower community banks and credit unions to enhance decision-making, operational efficiency, and deliver personalized member experiences. \n\n#FinTech #DigitalTransformation #BankingInnovation #DataPlatform\n#CustomerExperience #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7322945276569169922",
+      "content": "Read our case study https://lnkd.in/g_4t-76K. \n\nLearn how KANINI builds a modern web application to automate and optimize patient appointment management processes for a leading global healthcare organization. \n\nThe new web app has significantly improved cost savings, operational efficiencies, and decision-making.\n\n#HealthTech #DigitalTransformation #PatientCare #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7322515472355119104",
+      "content": "Watch the video to experience our GenAI-powered approach to Knowledge Base Management, leveraging the Now Assist Skill Kit in ServiceNow.\n\nBuild a robust knowledge base with improved efficiency and better collaboration in your organization by unlocking use cases like Knowledge Article Enrichment and Intelligent Categorization.\n\n#NASK #Servcienow #ArtificialIntelligence #GenAI #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7321495698456068096",
+      "content": "Read our blog post https://lnkd.in/gCzvfDYi and discover key characteristics of modern data architecture, its benefits, and leading trends in building a modern data framework.\n\nLearn how the right tools and strategies can help your enterprise get the most value from data—while staying aligned with overall goals. \n\nFeel free to share your thoughts in the comments section.\n\n#DataArchitecture #ModernData #DataStrategy #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7321403034423517184",
+      "content": "Don’t miss out on your next big move!\n\nStep into new opportunities with KANINI ! Join us in person!\n\nWalk-In Schedule \n26th April | KANINI Chennai Office | 10 AM – 4 PM \nVenue Address: https://lnkd.in/gC8aUw_n\n\nWe’re hiring professionals with 5yrs+ exp. for: \n1. Full Stack Developer (.NET + React)\n2. React Front-End Developer\n3. Java Developer (Microservices)\n4. DevOps Engineer \n5. QA Roles – Playwright | Data QA | Eggplant QA | Manual QA\n\nNote: To participate, please fill the pre-registration form before arriving at the venue. https://lnkd.in/dUsqNcHa\n\n#KANINI #happierwaytowork #walkindrive #dotnet #java \n#devops #QA #react",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7321133321529294848",
+      "content": "Looking for a solution to get a consolidated view of IT operations and ensure effective configuration management?\n\nOptimize workflows and achieve end-to-end visibility with ServiceNow CMDB. Get your personalized CMDB assessment report today - https://lnkd.in/gUxNScE7  \n\n#ServiceNow #CMDB #ITOperations #ConfigurationManagement #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    },
+    {
+      "id": "7320770950164008961",
+      "content": "Read our article on EHR innovation https://lnkd.in/giYp4NFC \n\nOur Director of Program Delivery for Healthcare, Ganesh Moorthy Subbaiyan, has collated all his experiences from working in the EHR space, to envision the future of EHRs. \n\nHe says, “The next decade in EHRs will see a maturation of user-centered design, the seamless integration of disparate systems, and a stronger focus on enabling collaboration and patient agency.”\n\n#EHR #HealthcareInnovation #PatientEngagement #KANINI",
+      "postedAgo": null,
+      "article": null,
+      "newsletterUrl": null,
+      "newsletterTitle": null,
+      "author": {
+        "name": "KANINI",
+        "linkedinUrl": "https://www.linkedin.com/company/kanini/posts"
+      }
+    }
+  ]
+}
