@@ -3,39 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BizInsightAnalyzer - URL Report</title>
+    <title>BizInsightAnalyzer - Report Generation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary-color: #4f46e5;
+            --primary-color-dark: #4338ca;
+            --secondary-color: #7c3aed;
+            --background-start: #f9fafb;
+            --background-end: #e5e7eb;
+            --card-background: rgba(255, 255, 255, 0.98);
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --border-color: #d1d5db;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--background-start) 0%, var(--background-end) 100%);
             min-height: 100vh;
-            padding: 20px;
-            color: #333;
+            padding: 2rem;
+            color: var(--text-primary);
         }
+
         .container {
             max-width: 800px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            background: var(--card-background);
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
             overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.5);
         }
+
         .header {
-            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: white;
-            padding: 40px 30px;
+            padding: 3rem 2rem;
             text-align: center;
             position: relative;
         }
+        
         .header-controls {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            gap: 10px;
+            top: 1.5rem;
+            right: 1.5rem;
         }
+
         .btn-icon {
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -48,57 +70,111 @@
             justify-content: center;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-size: 1.2rem;
         }
         .btn-icon:hover {
             background: rgba(255, 255, 255, 0.2);
-            transform: scale(1.1);
+            transform: translateY(-2px);
         }
-        .header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 10px; }
+        .btn-icon:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        .btn-icon svg { width: 24px; height: 24px; }
+
+        .header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
         .header p { font-size: 1.1rem; opacity: 0.9; }
-        .content { padding: 40px 30px; }
-        .form-group { display: flex; gap: 15px; align-items: flex-end; }
-        .input-wrapper { flex: 1; }
-        label { display: block; font-weight: 600; color: #374151; margin-bottom: 8px; }
+        
+        .content { padding: 2.5rem; }
+        .form-section { margin-bottom: 2rem; }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .form-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .form-grid .input-wrapper.full-width {
+                grid-column: 1 / -1;
+            }
+        }
+        
+        .input-wrapper { position: relative; }
+        label { display: block; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; font-size: 0.9rem;}
+        
+        .input-with-icon { position: relative; }
+        .input-with-icon svg {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+            pointer-events: none;
+        }
+
         input[type="text"] {
-            width: 100%; padding: 16px 20px; border: 2px solid #e5e7eb;
+            width: 100%; padding: 1rem 1rem 1rem 3rem; border: 1px solid var(--border-color);
             border-radius: 12px; font-size: 1rem; transition: all 0.3s ease;
             background: #f9fafb;
         }
         input[type="text"]:focus {
-            outline: none; border-color: #4f46e5; background: white;
-            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+            outline: none; border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
         }
+
         .btn {
-            padding: 16px 32px; border: none; border-radius: 12px;
+            padding: 1rem 2rem; border: none; border-radius: 12px;
             font-size: 1rem; font-weight: 600; cursor: pointer;
             transition: all 0.3s ease; display: inline-flex;
-            align-items: center; gap: 8px; text-decoration: none;
+            align-items: center; justify-content: center; gap: 0.5rem;
+            text-decoration: none;
         }
-        .btn-primary { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); color: white; }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3); }
+        .btn svg { width: 20px; height: 20px; }
+        .btn-primary { background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(79, 70, 229, 0.25); }
         .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; box-shadow: none; }
-        .result-section { margin-top: 30px; display: none; }
-        .result-section.show { display: block; animation: fadeInUp 0.5s ease; }
+        
+        .result-section { margin-top: 2.5rem; display: none; }
+        .result-section.show { display: block; animation: fadeInUp 0.6s ease-out; }
+        
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .status-card { padding: 24px; border-radius: 16px; margin-bottom: 20px; }
-        .status-loading { background: linear-gradient(135deg, #fbbf24, #f59e0b); color: white; }
-        .status-success { background: linear-gradient(135deg, #10b981, #059669); color: white; }
-        .status-error { background: linear-gradient(135deg, #ef4444, #dc2626); color: white; }
-        .status-info { background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; }
+        
+        .status-card { padding: 1.5rem; border-radius: 16px; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; }
+        .status-card .icon { flex-shrink: 0; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .status-card .icon svg { width: 24px; height: 24px; }
+        .status-card-content strong { display: block; font-size: 1.1rem; margin-bottom: 0.25rem; }
+        .status-card-content span { font-size: 0.95rem; opacity: 0.9; }
+        
+        .status-loading { background: linear-gradient(135deg, #f59e0b, #fbbf24); color: white; }
+        .status-loading .icon { background: rgba(255, 255, 255, 0.2); }
+        
+        .status-success { background: linear-gradient(135deg, #059669, #10b981); color: white; }
+        .status-success .icon { background: rgba(255, 255, 255, 0.2); }
+        
+        .status-error { background: linear-gradient(135deg, #dc2626, #ef4444); color: white; }
+        .status-error .icon { background: rgba(255, 255, 255, 0.2); }
+        
+        .status-info { background: linear-gradient(135deg, #2563eb, #3b82f6); color: white; }
+        .status-info .icon { background: rgba(255, 255, 255, 0.2); }
+
         .downloads-section {
-            display: none; background: #f8fafc; border: 2px dashed #cbd5e1;
-            border-radius: 16px; padding: 30px; text-align: center; margin-top: 20px;
+            display: none; background: #f9fafb; border: 1px solid var(--border-color);
+            border-radius: 16px; padding: 2rem; text-align: center; margin-top: 1.5rem;
         }
-        .downloads-section.show { display: block; animation: fadeInUp 0.5s ease 0.3s both; }
-        .download-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        .downloads-section.show { display: block; animation: fadeInUp 0.6s ease-out 0.3s both; }
+        
+        .download-buttons { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
         .download-btn {
-            background: white; color: #4f46e5; border: 2px solid #4f46e5;
-            padding: 14px 28px; border-radius: 12px; text-decoration: none;
+            background: white; color: var(--primary-color); border: 1px solid var(--primary-color);
+            padding: 0.8rem 1.5rem; border-radius: 12px; text-decoration: none;
             font-weight: 600; transition: all 0.3s ease;
-            display: flex; align-items: center; gap: 8px;
+            display: flex; align-items: center; gap: 0.5rem;
         }
-        .download-btn:hover { background: #4f46e5; color: white; transform: translateY(-2px); }
+        .download-btn:hover { background: var(--primary-color); color: white; transform: translateY(-2px); box-shadow: 0 8px 16px rgba(79, 70, 229, 0.2); }
+        
         .loading-spinner {
             display: inline-block; width: 20px; height: 20px;
             border: 3px solid rgba(255, 255, 255, 0.3); border-radius: 50%;
@@ -111,8 +187,10 @@
     <div class="container">
         <div class="header">
             <div class="header-controls">
-                <button class="btn-icon" id="updateDataBtn" title="Update Kanini Data">
-                    <span id="updateIcon">🔄</span>
+                <button class="btn-icon" id="updateDataBtn" title="Update Kanini Data from Website">
+                    <span id="updateIcon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
+                    </span>
                     <span id="updateSpinner" class="loading-spinner" style="display: none;"></span>
                 </button>
             </div>
@@ -123,12 +201,32 @@
         <div class="content">
             <div class="form-section">
                 <form id="urlForm">
-                    <div class="form-group">
-                        <div class="input-wrapper">
+                    <div class="form-grid">
+                        <div class="input-wrapper full-width">
                             <label for="urlInput">Company Website URL</label>
-                            <input type="text" id="urlInput" placeholder="https://example.com" required>
+                            <div class="input-with-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.72"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.72-1.72"/></svg>
+                                <input type="text" id="urlInput" placeholder="https://example.com" required>
+                            </div>
                         </div>
+                         <div class="input-wrapper">
+                            <label for="tickerInput">Ticker Symbol (Optional)</label>
+                             <div class="input-with-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 3.5v17H22"/><path d="M22 6H3.5"/><path d="M22 12H3.5"/><path d="M22 18H3.5"/></svg>
+                                <input type="text" id="tickerInput" placeholder="e.g., MSFT">
+                            </div>
+                        </div>
+                         <div class="input-wrapper">
+                            <label for="linkedinInput">LinkedIn Name (Optional)</label>
+                             <div class="input-with-icon">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                                <input type="text" id="linkedinInput" placeholder="e.g., microsoft">
+                            </div>
+                        </div>
+                    </div>
+                     <div style="text-align: center; margin-top: 2.5rem;">
                         <button type="submit" class="btn btn-primary" id="generateBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c.432 0 .847.07.124.188a3.5 3.5 0 0 0-1.076 6.55l-4.14 4.14a3.5 3.5 0 1 0 4.95 4.95l4.14-4.14a3.5 3.5 0 0 0 6.55-1.076A3.5 3.5 0 0 0 21 12c0-1.933-1.567-3.5-3.5-3.5a3.5 3.5 0 0 0-1.24.188 3.5 3.5 0 0 0-6.55-1.076A3.5 3.5 0 0 0 8.5 3c.432 0 .847.07 1.24.188A3.5 3.5 0 0 0 12 3z"/></svg>
                             <span id="btnText">Generate Report</span>
                             <span id="btnSpinner" class="loading-spinner" style="display: none;"></span>
                         </button>
@@ -141,8 +239,8 @@
                     <div id="statusContent"></div>
                 </div>
                 <div class="downloads-section" id="downloadsSection">
-                    <div style="font-size: 1.3rem; font-weight: 700; color: #1f2937; margin-bottom: 15px;">📄 Reports Ready!</div>
-                    <div style="color: #6b7280; margin-bottom: 25px;">Click the buttons below to download your reports</div>
+                    <div style="font-size: 1.3rem; font-weight: 700; color: #1f2937; margin-bottom: 1rem;">📄 Reports Ready!</div>
+                    <div style="color: var(--text-secondary); margin-bottom: 1.5rem;">Click the buttons below to download your generated reports.</div>
                     <div class="download-buttons" id="downloadButtons"></div>
                 </div>
             </div>
@@ -157,53 +255,58 @@
         const resultSection = document.getElementById("resultSection");
         const statusCard = document.getElementById("statusCard");
         const statusContent = document.getElementById("statusContent");
+        const downloadsSection = document.getElementById("downloadsSection");
         
         function showStatus(type, title, message) {
             resultSection.classList.add("show");
+            downloadsSection.classList.remove("show");
             statusCard.className = `status-card status-${type}`;
-            statusContent.innerHTML = `<div><div style="font-weight: 600;">${title}</div><div style="opacity: 0.9;">${message}</div></div>`;
+            
+            let iconSvg = '';
+            if (type === 'loading') iconSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="loading-spinner" style="border-top-color: white; border-right-color: transparent; border-bottom-color: transparent; width: 24px; height: 24px;"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>`;
+            if (type === 'success') iconSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>`;
+            if (type === 'error') iconSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>`;
+            if (type === 'info') iconSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="16" y2="12"/><line x1="12" x2="12.01" y1="8" y2="8"/></svg>`;
+
+            statusContent.innerHTML = `<div class="icon">${iconSvg}</div> <div class="status-card-content"><strong>${title}</strong><span>${message}</span></div>`;
         }
 
         document.getElementById("urlForm").addEventListener("submit", async function(event) {
             event.preventDefault();
             const url = document.getElementById("urlInput").value;
-            const downloadsSection = document.getElementById("downloadsSection");
+            const tickerSymbol = document.getElementById("tickerInput").value;
+            const linkedinName = document.getElementById("linkedinInput").value;
+            
             const generateBtn = document.getElementById("generateBtn");
             const btnText = document.getElementById("btnText");
             const btnSpinner = document.getElementById("btnSpinner");
 
-            showStatus('loading', 'Analyzing Website...', 'This may take a few moments.');
-            downloadsSection.classList.remove("show");
+            showStatus('loading', 'Analyzing Website...', 'This may take a few moments. Please be patient.');
             generateBtn.disabled = true;
-            btnText.textContent = "Processing...";
+            btnText.style.display = "none";
             btnSpinner.style.display = "inline-block";
 
             try {
                 const response = await fetch("/url-report/api/generate_report/", {
                     method: "POST",
                     headers: { "Content-Type": "application/json", "X-CSRFToken": getCsrfToken() },
-                    body: JSON.stringify({ url: url })
+                    body: JSON.stringify({ url, ticker_symbol: tickerSymbol, linkedin_name: linkedinName })
                 });
 
                 const data = await response.json();
-                if (!response.ok) {
-                    throw new Error(data.error || `Server error: ${response.status}`);
-                }
+                if (!response.ok) throw new Error(data.error || `Server error: ${response.status}`);
 
                 showStatus('success', 'Success!', data.message);
 
                 setTimeout(() => {
                     const downloadButtons = document.getElementById("downloadButtons");
                     let buttonsHtml = '';
-                    if (data.target_report_file) {
-                        buttonsHtml += `<a href="/url-report/api/download/${data.target_report_file}/" class="download-btn">📊 Target Report</a>`;
-                    }
-                    if (data.comparison_report_file) {
-                        buttonsHtml += `<a href="/url-report/api/download/${data.comparison_report_file}/" class="download-btn">📈 Comparison Report</a>`;
-                    }
-                    if (data.financial_report_file) {
-                        buttonsHtml += `<a href="/url-report/api/download/${data.financial_report_file}/" class="download-btn">💰 Financial Report</a>`;
-                    }
+                    const downloadIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>`;
+                    
+                    if (data.target_report_file) buttonsHtml += `<a href="/url-report/api/download/${data.target_report_file}/" class="download-btn">${downloadIcon} Target Report</a>`;
+                    if (data.comparison_report_file) buttonsHtml += `<a href="/url-report/api/download/${data.comparison_report_file}/" class="download-btn">${downloadIcon} Comparison Report</a>`;
+                    if (data.financial_report_file) buttonsHtml += `<a href="/url-report/api/download/${data.financial_report_file}/" class="download-btn">${downloadIcon} Financial Report</a>`;
+                    
                     downloadButtons.innerHTML = buttonsHtml;
                     downloadsSection.classList.add("show");
                 }, 300);
@@ -213,12 +316,11 @@
                 showStatus('error', 'Request Failed', 'A network or server error occurred. Please check the console.');
             } finally {
                 generateBtn.disabled = false;
-                btnText.textContent = "Generate Report";
+                btnText.style.display = "inline-block";
                 btnSpinner.style.display = "none";
             }
         });
 
-        // Event listener for the new update button
         document.getElementById("updateDataBtn").addEventListener("click", async function() {
             const updateBtn = this;
             const updateIcon = document.getElementById("updateIcon");
@@ -236,9 +338,7 @@
                 });
                 
                 const data = await response.json();
-                if (!response.ok) {
-                    throw new Error(data.error || `Server error: ${response.status}`);
-                }
+                if (!response.ok) throw new Error(data.error || `Server error: ${response.status}`);
                 
                 showStatus('success', 'Update Complete!', data.message);
 

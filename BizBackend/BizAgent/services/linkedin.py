@@ -3,9 +3,7 @@ import json
 import requests
 import logging
 from dotenv import load_dotenv
-from collections import defaultdict
 from langchain_openai import AzureChatOpenAI
-import tiktoken
 
 # ----------------------------
 # Config
@@ -18,7 +16,7 @@ AZURE_ENDPOINT = os.getenv("AZURE_ENDPOINT")
 DEPLOYMENT_NAME = os.getenv("DEPLOYMENT_NAME")
 
 if not all([LINKEDIN_KEY, AZURE_OPENAI_KEY, AZURE_ENDPOINT, DEPLOYMENT_NAME]):
-    raise ValueError("Missing one or more Azure/OpenAI/LinkedIn environment variables in .env")
+    raise ValueError("Missing one or more Azure/OpenAI/LinkedIn environment variables.")
 
 HEADERS = {"X-API-Key": LINKEDIN_KEY}
 BASE_URL = "https://api.harvest-api.com/linkedin"
@@ -36,9 +34,9 @@ llm = AzureChatOpenAI(
 )
 
 # --------------------------------------------------------
-# API Helpers
+# API Helpers & Data Processing
 # --------------------------------------------------------
-def safe_request(url, params=None):
+def _safe_request(url, params=None):
     try:
         resp = requests.get(url, headers=HEADERS, params=params, timeout=15)
         resp.raise_for_status()
@@ -47,90 +45,100 @@ def safe_request(url, params=None):
         logging.error(f"API request failed: {url} | {e}")
         return {}
 
-def get_company(universal_name: str) -> dict:
-    data = safe_request(f"{BASE_URL}/company?universalName={universal_name}")
+def _get_company(universal_name: str) -> dict:
+    data = _safe_request(f"{BASE_URL}/company?universalName={universal_name}")
     return data.get("element", {})
 
-def get_company_posts(universal_name: str, max_pages: int = 2) -> list:
+def _get_company_posts(universal_name: str, max_pages: int = 1) -> list:
     posts = []
     for page in range(1, max_pages + 1):
-        data = safe_request(f"{BASE_URL}/company-posts?companyUniversalName={universal_name}&page={page}")
+        data = _safe_request(f"{BASE_URL}/company-posts?companyUniversalName={universal_name}&page={page}")
         posts.extend(data.get("elements", []))
     return posts
 
 # ----------------------------
-# Processing & Summarization
+# LLM-Powered Analysis Functions
 # ----------------------------
-def summarize_text_with_llm(prompt: str, max_tokens: int = 15000) -> str:
-    """Invokes the LLM to summarize provided text based on a prompt."""
-    if len(prompt) > max_tokens * 3:
-         logging.warning("Prompt might be too long, truncating.")
-         prompt = prompt[:max_tokens * 3]
+def _summarize_with_llm(prompt: str) -> str:
     try:
         resp = llm.invoke(prompt)
         return resp.content.strip()
     except Exception as e:
         logging.error(f"LLM invocation failed: {e}")
-        return "Error: Could not generate summary."
+        return f"Error: Could not generate summary due to an LLM error: {e}"
 
+def _analyze_company_profile(company_info: dict) -> str:
+    if not company_info:
+        return "No company profile data was provided."
+    
+    profile_for_analysis = {
+        "name": company_info.get("name"),
+        "description": company_info.get("description"),
+        "industries": company_info.get("industries"),
+        "specialities": company_info.get("specialities"),
+        "employeeCount": company_info.get("employeeCount"),
+        "headquarter": company_info.get("headquarter"),
+    }
 
-def summarize_company_info(company_info: dict) -> str:
     prompt = f"""
-You are a Senior Business Analyst. Review the following company information from LinkedIn and extract key insights. 
-Focus on summarizing their mission, size, specialities, and any potential risks or weaknesses evident from the data.
+You are a Senior Business Analyst. Based on the following LinkedIn company profile data, write a concise summary that covers the company's core business, size, and key focus areas.
 
 Company Data:
-{json.dumps(company_info, indent=2)}
+{json.dumps(profile_for_analysis, indent=2)}
 """
-    return summarize_text_with_llm(prompt)
+    return _summarize_with_llm(prompt)
 
-def summarize_posts(posts: list) -> str:
-    """Summarizes a list of posts into key themes."""
+def _analyze_company_posts(posts: list) -> str:
     if not posts:
-        return "No recent post activity found."
+        return "No recent post activity found on LinkedIn."
     
-    all_post_content = "\n\n---\n\n".join([post.get('content', '') for post in posts])
-    
+    all_post_content = "\n\n---\n\n".join(
+        [post.get('content', '') for post in posts if post.get('content')]
+    )
+    if not all_post_content.strip():
+        return "Recent posts contained no readable text content."
+
     prompt = f"""
-You are a business analyst. I will provide you with recent LinkedIn posts from a company. 
-Analyze these posts and summarize the key themes, focusing on:
-1.  **Strategic Priorities:** What are they focused on (e.g., product launches, hiring, events)?
-2.  **Market Position & Branding:** How do they present themselves to the public?
-3.  **Potential Business Opportunities:** Are there any signals for potential partnerships or sales?
+You are a strategic analyst. Based on the following collection of recent LinkedIn posts from a company, identify and summarize the key themes. Focus on:
+1.  **Strategic Priorities:** What are they consistently talking about (e.g., product launches, hiring, events, technology trends)?
+2.  **Company Culture & Tone:** What is the overall tone of their communications?
+3.  **Potential Business Signals:** Are there any hints of expansion, new partnerships, or challenges they are trying to solve?
 
 LinkedIn Posts:
-{all_post_content}
+{all_post_content[:8000]}
 """
-    return summarize_text_with_llm(prompt)
+    return _summarize_with_llm(prompt)
 
 # ----------------------------
-# Main Pipeline
+# Main Pipeline - Corrected to break the loop
 # ----------------------------
-def run_pipeline(universal_name: str) -> dict:
+def run_pipeline(universal_name: str) -> str:
     """
-    Main pipeline to fetch company info and posts, then generate summaries.
-    Returns a dictionary of insights.
+    Main pipeline to fetch, analyze, and structure LinkedIn data.
+    Returns a single, structured markdown string.
     """
     logging.info(f"--- Starting LinkedIn Pipeline for: {universal_name} ---")
     
-    company_info = get_company(universal_name)
+    company_info = _get_company(universal_name)
     if not company_info:
-        logging.error("Could not fetch company info. Aborting pipeline.")
-        return {"error": f"Failed to retrieve company data for {universal_name}."}
+        error_msg = f"Failed to retrieve company data for '{universal_name}'. The universal name may be incorrect or the API key may be invalid."
+        logging.error(error_msg)
+        return f"### LinkedIn Analysis Error\n\n{error_msg}"
 
-    company_posts = get_company_posts(universal_name, max_pages=1)
+    company_posts = _get_company_posts(universal_name, max_pages=1)
 
-    logging.info("🔹 Summarizing company profile...")
-    company_summary = summarize_company_info(company_info)
+    company_summary = _analyze_company_profile(company_info)
+    posts_summary = _analyze_company_posts(company_posts)
     
-    logging.info("🔹 Summarizing recent posts...")
-    posts_summary = summarize_posts(company_posts)
-    
-    insights = {
-        "company_summary": company_summary,
-        "posts_summary": posts_summary,
-    }
+    # This now builds the final report string directly
+    final_report = f"""
+### LinkedIn Profile Summary
+{company_summary}
+
+### Key Insights from Recent Activity
+{posts_summary}
+"""
     
     logging.info("--- LinkedIn Pipeline Completed Successfully ---")
-    return insights
+    return final_report
 

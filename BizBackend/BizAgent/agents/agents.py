@@ -12,102 +12,97 @@ from BizAgent.tools.tools import (
     edgar_tool,
     fmp_tool,
     news_tool,
-    wikipedia_company_tool
+    wikipedia_company_tool,
+    yahoo_finance_tool
 )
 
 load_dotenv()
 
-llm_config = { "model": "gemini-2.0-flash", "temperature": 0.2 }
-llm = ChatGoogleGenerativeAI(**llm_config, google_api_key=os.getenv('GOOGLE_API_KEY'))
-llm2 = ChatGoogleGenerativeAI(**llm_config, google_api_key=os.getenv('GOOGLE_API_KEY1'))
+# --- Language Model Configurations ---
+llm_config = {"temperature": 0.2, "max_tokens": 4096}
+llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", **llm_config, google_api_key=os.getenv('GOOGLE_API_KEY'))
+llm2 = ChatGoogleGenerativeAI(model="gemini-2.0-flash", **llm_config, google_api_key=os.getenv('GOOGLE_API_KEY1'))
 
 # --- Agent Definitions ---
 
 company_researcher = Agent(
     role="Senior Company Research Analyst",
-    goal="Compile a detailed overview of a company.",
-    backstory="Expert in synthesizing corporate information.",
+    goal="Compile a detailed and structured overview of a given company.",
+    backstory="An expert in gathering and synthesizing corporate information from various sources to provide a foundational understanding of a company.",
     tools=[wikipedia_company_tool, serpapi_search_tool],
-    llm=llm, verbose=True, allow_delegation=False, memory=True,
+    llm=llm, verbose=True, memory=True, allow_delegation=False,
 )
 
 competitor_analyst = Agent(
     role="Lead Competitive Intelligence Analyst",
-    goal="Identify and analyze key competitors.",
-    backstory="Strategist specializing in competitive landscapes.",
+    goal="Identify and analyze the key competitors of a given company to provide a strategic assessment of the competitive landscape.",
+    backstory="A seasoned strategist with a deep understanding of market dynamics, excelling at uncovering competitive advantages and weaknesses.",
     tools=[serpapi_search_tool],
-    llm=llm, verbose=True, allow_delegation=False, memory=True,
+    llm=llm, verbose=True, memory=True, allow_delegation=False,
 )
 
 finance_analyst = Agent(
     role="Quantitative Financial Analyst",
-    goal="Analyze a company's financial health.",
-    backstory="Financial expert skilled in interpreting market data.",
-    tools=[fmp_tool, edgar_tool, serpapi_search_tool],
-    llm=llm, verbose=True, allow_delegation=False, memory=True,
+    goal="Analyze the financial health of a company, using web search to find a ticker symbol if not provided, and then fetching detailed financial statements to answer specific, in-depth questions.",
+    backstory="A meticulous financial expert skilled in interpreting financial statements. You must use the Yahoo Finance tool as your primary source for financial data.",
+    tools=[yahoo_finance_tool, serpapi_search_tool, fmp_tool, edgar_tool],
+    llm=llm, verbose=True, memory=True, allow_delegation=False,
 )
 
 market_analyst = Agent(
     role="Senior Market Research Analyst",
-    goal="Analyze the company's market, including size, trends, and opportunities.",
-    backstory="Specialist in market intelligence and trend analysis.",
+    goal="Conduct a thorough analysis of the target company's market, including size, trends, and growth opportunities.",
+    backstory="A specialist in market intelligence and trend analysis, providing data-driven insights that help businesses understand their operating environment.",
     tools=[serpapi_search_tool],
-    llm=llm, verbose=True, allow_delegation=False, memory=True,
+    llm=llm, verbose=True, memory=True, allow_delegation=False,
 )
 
 news_gatherer = Agent(
     role="Corporate News Curator",
-    goal="Gather, summarize, and analyze recent, impactful news about a company.",
-    backstory="News intelligence specialist focused on providing timely, relevant information.",
+    goal="Gather, summarize, and analyze the most recent and impactful news related to a company.",
+    backstory="A news intelligence specialist focused on providing timely and relevant information, discerning the sentiment and business impact of news articles.",
     tools=[news_tool, serpapi_search_tool],
-    llm=llm, verbose=True, allow_delegation=False, memory=True,
+    llm=llm, verbose=True, memory=True, allow_delegation=False,
 )
 
 url_scrapper = Agent(
-    role='Web Content & Official Name Extractor',
-    goal='Extract comprehensive information from a company website and identify the official, full company name.',
-    backstory="An advanced web scraping specialist who identifies key corporate information and official branding.",
+    role='IT-Focused Web Content Extractor',
+    goal='Extract comprehensive information from a company website and the web, focusing on IT infrastructure, digital initiatives, and potential service gaps.',
+    backstory="An advanced web scraping specialist with a deep understanding of IT services and digital transformation.",
     tools=[web_scraping_tool, serpapi_search_tool],
     llm=llm, verbose=True, allow_delegation=False,
 )
 
-# Corrected Agent
-linkedin_agent = Agent(
-    role="LinkedIn Profile Intelligence Agent",
-    goal="Given a company name, find its LinkedIn universal name, fetch its profile data, and summarize the key insights.",
-    backstory=(
-        "A specialist in corporate intelligence with two key skills: "
-        "1. Using web search to precisely locate a company's official LinkedIn page. "
-        "2. Using specialized tools to extract and analyze data from that page."
-    ),
-    tools=[serpapi_search_tool, linkedin_insights_tool],
-    llm=llm2,
-    allow_delegation=False,
-    verbose=True,
-)
-
 url_analyzer = Agent(
-    role='IT & Business Strategy Analyst',
-    goal='Synthesize scraped web content and LinkedIn insights into a comprehensive technology and business report.',
-    backstory="A consultant who combines data from multiple digital footprints to identify technology trends, business opportunities, and strategic insights.",
+    role='IT, Business, and LinkedIn Strategy Analyst',
+    goal='Synthesize scraped web content and provided LinkedIn insights to create a comprehensive technology and business report.',
+    backstory="A seasoned consultant who combines data from multiple digital sources to identify technology trends, business opportunities, and strategic weaknesses.",
     tools=[serpapi_search_tool],
     llm=llm2, verbose=True, allow_delegation=False,
 )
 
 pdf_analyzer = Agent(
     role='IT Document Analyst',
-    goal='Analyze data from a PDF to identify IT technology usage, strengths, and weaknesses.',
-    backstory="An IT consultant with expertise in analyzing documents to uncover technological insights.",
+    goal='Analyze and scrape data from a given PDF to identify IT technology usage, strengths, weaknesses, and service opportunities, supplementing with web research.',
+    backstory="An expert in analyzing documents to uncover technological insights and business opportunities, leading to successful partnerships.",
     tools=[serpapi_search_tool, fetch_pdf_content],
     llm=llm, verbose=True, allow_delegation=False,
 )
 
 financial_report_generator = Agent(
     role='Lead Financial Analyst & Report Synthesizer',
-    goal='Synthesize research from multiple agents to generate a comprehensive, context-aware financial report.',
-    backstory="A senior financial strategist who weaves together intelligence to tell a cohesive story about a company's financial health.",
-    tools=[generate_financial_report_tool],
+    goal='Synthesize research from multiple agents to generate a comprehensive, context-aware financial report in markdown format.',
+    backstory="A senior financial strategist responsible for creating the final, consolidated report, weaving together different strands of intelligence to tell a cohesive story.",
+    tools=[], # This agent synthesizes, it doesn't need its own tools.
     llm=llm, verbose=True, allow_delegation=False,
+)
+
+linkedin_agent = Agent(
+    role="LinkedIn Intelligence Analyst",
+    goal="Fetch and analyze LinkedIn company data using the provided universal name to uncover strategic insights and sales signals.",
+    backstory="An expert in corporate social media analysis, skilled at interpreting LinkedIn data to uncover hiring trends, strategic priorities, and sales signals.",
+    tools=[linkedin_insights_tool, serpapi_search_tool],
+    llm=llm2, verbose=True, allow_delegation=False,
 )
 
 

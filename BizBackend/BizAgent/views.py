@@ -20,8 +20,9 @@ from BizAgent.agents.agents import (
     company_researcher, competitor_analyst, finance_analyst,
     market_analyst, news_gatherer, financial_report_generator
 )
+# Corrected: Import the new, consolidated linkedin_task
 from BizAgent.agents.tasks import (
-    url_scrape_task, find_linkedin_profile_task, analyze_linkedin_profile_task, url_analyze_task,
+    url_scrape_task, linkedin_task, url_analyze_task,
     company_task, competitor_task, finance_task, market_task, news_task, 
     generate_financial_task
 )
@@ -42,7 +43,7 @@ def _get_company_name(url: str, report_content: str) -> str:
     except Exception: pass
     return "Target Company"
 
-def _run_secondary_analyses(company_name, request_id):
+def _run_secondary_analyses(company_name, ticker_symbol, request_id):
     if not company_name or company_name == "Target Company":
         print("--- Skipping secondary analysis: No specific company name found. ---")
         return None
@@ -53,7 +54,7 @@ def _run_secondary_analyses(company_name, request_id):
         loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)
     
-    print(f"--- Starting secondary analysis for: {company_name} ---")
+    print(f"--- Starting secondary analysis for: {company_name} (Ticker: {ticker_symbol or 'Not Provided'}) ---")
     try:
         sales_intelligence_crew = Crew(
             agents=[
@@ -68,7 +69,10 @@ def _run_secondary_analyses(company_name, request_id):
             verbose=True
         )
         
-        financial_markdown = sales_intelligence_crew.kickoff(inputs={"company_name": company_name})
+        financial_markdown = sales_intelligence_crew.kickoff(inputs={
+            "company_name": company_name,
+            "ticker_symbol": ticker_symbol
+        })
         
         financial_md_path = os.path.join(settings.MEDIA_ROOT, f"financial_report_{request_id}.md")
         with open(financial_md_path, "w", encoding="utf-8") as f:
@@ -94,20 +98,31 @@ def generate_url_report(request):
     try:
         data = json.loads(request.body)
         url = data.get('url')
+        ticker_symbol = data.get('ticker_symbol', '')
+        linkedin_name = data.get('linkedin_name', '')
+
         if not url:
             return JsonResponse({"error": "URL is required."}, status=400)
         
         request_id = uuid.uuid4().hex[:8]
         os.makedirs(settings.MEDIA_ROOT, exist_ok=True)
 
+        # Corrected: Use the new, streamlined task list
         url_analysis_crew = Crew(
             agents=[url_scrapper, linkedin_agent, url_analyzer],
-            tasks=[url_scrape_task, find_linkedin_profile_task, analyze_linkedin_profile_task, url_analyze_task],
+            tasks=[url_scrape_task, linkedin_task, url_analyze_task],
             process=Process.sequential,
             verbose=True
         )
         
-        target_report_content = url_analysis_crew.kickoff(inputs={"url": url})
+        # Use a default if linkedin_name is not provided, so the task doesn't fail
+        effective_linkedin_name = linkedin_name or urlparse(url).hostname.replace('www.', '').split('.')[0]
+
+        # Corrected: Pass linkedin_name as an input for the new task
+        target_report_content = url_analysis_crew.kickoff(inputs={
+            "url": url,
+            "linkedin_name": effective_linkedin_name
+        })
         
         if not target_report_content or "unable to complete" in target_report_content.lower():
              return JsonResponse({"error": "Failed to generate the main analysis report from the URL."}, status=500)
@@ -121,7 +136,6 @@ def generate_url_report(request):
         target_docx_path = os.path.join(settings.MEDIA_ROOT, f"target_url_report_{request_id}.docx")
         convert_md_to_docx(target_md_path, target_docx_path, company_name, 'target')
 
-        # Corrected: Instantiate and run the UrlReportGeneratorAgent
         kanini_txt_path = os.path.join(settings.BASE_DIR, "BizAgent", "Data", "KANINI_SERVICES.txt")
         compare_agent = UrlReportGeneratorAgent()
         comparison_content = compare_agent.run(
@@ -137,7 +151,7 @@ def generate_url_report(request):
         comparison_docx_path = os.path.join(settings.MEDIA_ROOT, f"comparison_url_report_{request_id}.docx")
         convert_md_to_docx(comparison_md_path, comparison_docx_path, company_name, 'comparison')
         
-        financial_path = _run_secondary_analyses(company_name, request_id)
+        financial_path = _run_secondary_analyses(company_name, ticker_symbol, request_id)
 
         return JsonResponse({
             "message": "All reports generated successfully.",
@@ -151,13 +165,12 @@ def generate_url_report(request):
         traceback.print_exc()
         return JsonResponse({"error": str(e)}, status=500)
 
-
 @csrf_exempt
 @require_POST
 def update_kanini_data(request):
     try:
-        output_file = os.path.join(settings.BASE_DIR, "BizAgent", "Data", "KANINI_SERVICES.txt")
-        run_kanini_scrape_and_update(output_file)
+        output_directory = os.path.join(settings.BASE_DIR, "BizAgent", "Data")
+        run_kanini_scrape_and_update(output_directory)
         return JsonResponse({"message": "Kanini services data has been updated successfully."})
     except Exception as e:
         import traceback
@@ -168,12 +181,9 @@ def update_kanini_data(request):
 @require_POST
 def upload_pdf(request):
     pdf_file = request.FILES.get('pdf')
-    if not pdf_file:
-        return JsonResponse({"error": "No PDF file was uploaded."}, status=400)
-    
+    if not pdf_file: return JsonResponse({"error": "No PDF file was uploaded."}, status=400)
     upload_dir = os.path.join(settings.MEDIA_ROOT, 'uploads')
     os.makedirs(upload_dir, exist_ok=True)
-    
     file_path = default_storage.save(os.path.join(upload_dir, pdf_file.name), pdf_file)
     return JsonResponse({"message": "File uploaded successfully.", "pdf_path": file_path})
 
@@ -183,18 +193,14 @@ def url_report_page(request):
 def download_docx(request, filename):
     if ".." in filename or filename.startswith(("/", "\\")):
         raise Http404("Invalid filename.")
-
     file_path = os.path.join(settings.MEDIA_ROOT, filename)
-    
     if not os.path.exists(file_path):
-        raise Http404(f"File not found in media directory: {filename}")
-
+        raise Http404(f"File not found: {filename}")
     mime_type, _ = mimetypes.guess_type(file_path)
     with open(file_path, "rb") as f:
         response = HttpResponse(f.read(), content_type=mime_type or "application/vnd.openxmlformats-officedocument.wordprocessingml.document")
         response["Content-Disposition"] = f'attachment; filename="{os.path.basename(file_path)}"'
         return response
-
 
 
 

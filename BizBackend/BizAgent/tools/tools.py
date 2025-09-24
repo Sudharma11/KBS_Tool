@@ -2,42 +2,62 @@ import json
 import os
 import re
 import requests
+import yfinance as yf
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
 from PyPDF2 import PdfReader
 from crewai_tools import tool
 from dotenv import load_dotenv
-from BizAgent.services.linkedin import run_pipeline as run_linkedin_pipeline
 
-# --- Environment and API Key Setup ---
-load_dotenv()
-os.environ.setdefault('SERPER_API_KEY', os.getenv('SERPER_API_KEY', ''))
-
-SEC_API_KEY = os.getenv("SEC_API_KEY")
-FMP_API_KEY = os.getenv("FMP_API_KEY")
-NEWSAPI_KEY = os.getenv("NEWSAPI_KEY")
-SERPAPI_KEY = os.getenv("SERPAPI_KEY")
-
+# Import services with fallbacks
+try:
+    from BizAgent.services.linkedin import run_pipeline as run_linkedin_pipeline
+except ImportError:
+    print("Warning: LinkedIn service not found.")
+    def run_linkedin_pipeline(name, config=None): return "{'error': 'LinkedIn service not configured'}"
 try:
     from BizAgent.reports.financial_report_tool import run_financial_report_pipeline
 except ImportError:
     print("Warning: Financial Report service not found.")
     def run_financial_report_pipeline(name, config=None): return "Financial report service not configured."
 
+# --- Environment and API Key Setup ---
+load_dotenv()
+os.environ.setdefault('SERPER_API_KEY', os.getenv('SERPER_API_KEY', ''))
+SEC_API_KEY = os.getenv("SEC_API_KEY")
+FMP_API_KEY = os.getenv("FMP_API_KEY")
+NEWSAPI_KEY = os.getenv("NEWSAPI_KEY")
+SERPAPI_KEY = os.getenv("SERPAPI_KEY")
+
 
 # --- Tool Definitions ---
 
+@tool("Yahoo Finance Tool")
+def yahoo_finance_tool(ticker: str, config: dict | None = None) -> str:
+    """Fetches financial statements (Balance Sheet, Income Statement, Cash Flow) for a stock ticker from Yahoo Finance."""
+    try:
+        stock = yf.Ticker(ticker)
+        data = {
+            "Balance Sheet": stock.balance_sheet.to_string(),
+            "Income Statement": stock.income_stmt.to_string(),
+            "Cash Flow": stock.cashflow.to_string()
+        }
+        if not any(val.strip() for val in data.values()):
+            return f"Error: No financial data found for ticker '{ticker}'."
+        return json.dumps(data, indent=2)
+    except Exception as e:
+        return f"Error fetching data from Yahoo Finance for '{ticker}': {e}"
+
 @tool("Web URL Scraper")
 def web_scraping_tool(url: str, config: dict | None = None) -> str:
-    """Scrapes clean text content from a given website URL."""
+    """Scrapes clean text content from a given website URL using Jina AI's reader API."""
     jina_url = f"https://r.jina.ai/{url}"
     try:
-        response = requests.get(jina_url, timeout=20)
+        response = requests.get(jina_url, timeout=25)
         response.raise_for_status()
         return response.text
     except requests.RequestException as e:
-        return f"Error: Could not retrieve content from {url} via Jina: {e}"
-
+        return f"Error: Could not retrieve content from {url}: {e}"
 
 @tool("SerpAPI Google Search")
 def serpapi_search_tool(query: str, config: dict | None = None) -> str:
@@ -45,39 +65,30 @@ def serpapi_search_tool(query: str, config: dict | None = None) -> str:
     if not SERPAPI_KEY: return "Error: SERPAPI_KEY is not set."
     try:
         from serpapi import GoogleSearch
-        search = GoogleSearch({"q": query, "api_key": SERPAPI_KEY, "num": 5})
-        results = search.get_dict().get("organic_results", [])
+        results = GoogleSearch({"q": query, "api_key": SERPAPI_KEY, "num": 5}).get_dict().get("organic_results", [])
         if not results: return f"No search results for: {query}"
         return f"### Search Results for '{query}':\n\n" + "\n\n".join(
             f"- **Title:** {r.get('title', 'N/A')}\n  **Snippet:** {r.get('snippet', 'N/A')}"
             for r in results
         )
-    except Exception as e:
-        return f"Error during SerpAPI search: {e}"
-
+    except Exception as e: return f"Error during SerpAPI search: {e}"
 
 @tool("PDF Content Extractor")
 def fetch_pdf_content(pdf_path: str, config: dict | None = None) -> str:
-    """Extracts all text content from a local PDF file."""
+    """Extracts all text content from a local PDF file given its file path."""
     try:
         with open(pdf_path, 'rb') as f:
             text = '\n'.join(p.extract_text() for p in PdfReader(f).pages if p.extract_text())
         return re.sub(r'\s+', ' ', text).strip()
-    except Exception as e:
-        return f"Error reading PDF {pdf_path}: {e}"
-
+    except Exception as e: return f"Error reading PDF {pdf_path}: {e}"
 
 @tool("LinkedIn Company Insights Tool")
-def linkedin_insights_tool(company_name: str, config: dict | None = None) -> str:
-    """
-    Extracts company insights from LinkedIn, including a profile summary and analysis of recent posts.
-    The input should be the company's name (e.g., 'Microsoft', 'Google').
-    """
-    print(f"--- Running LinkedIn pipeline for: {company_name} ---")
-    universal_name = company_name.lower().replace(' ', '')
-    insights = run_linkedin_pipeline(universal_name)
-    return json.dumps(insights, indent=2, ensure_ascii=False)
-
+def linkedin_insights_tool(universal_name: str, config: dict | None = None) -> str:
+    """Extracts, analyzes, and structures company insights from LinkedIn using a company's universal name (e.g., 'microsoft', 'google', 'monogram-health')."""
+    if not universal_name:
+        return "Error: A universal name for the LinkedIn company must be provided."
+    print(f"--- Running LinkedIn pipeline for universal name: {universal_name} ---")
+    return run_linkedin_pipeline(universal_name)
 
 @tool("Financial Report Generator Tool")
 def generate_financial_report_tool(company_name: str, config: dict | None = None) -> str:
@@ -87,23 +98,18 @@ def generate_financial_report_tool(company_name: str, config: dict | None = None
     except Exception as e:
         return f"Error generating financial report for {company_name}: {e}"
 
-
 @tool("EDGAR SEC Filings Fetcher")
 def edgar_tool(ticker: str, config: dict | None = None) -> str:
     """Fetches key data from the latest 10-K SEC filing for a public company ticker."""
     if not SEC_API_KEY: return "Error: SEC_API_KEY not set."
     try:
         from sec_api import QueryApi, ExtractorApi
-        queryApi = QueryApi(api_key=SEC_API_KEY)
-        query = {"query": f"ticker:{ticker} AND formType:\"10-K\"", "from": "0", "size": "1", "sort": [{"filedAt": {"order": "desc"}}]}
-        filings = queryApi.get_filings(query)
+        filings = QueryApi(api_key=SEC_API_KEY).get_filings({"query": f"ticker:{ticker} AND formType:\"10-K\"", "from": "0", "size": "1", "sort": [{"filedAt": {"order": "desc"}}]})
         if not filings.get('filings'): return f"No 10-K filings for {ticker}"
         filing = filings['filings'][0]
-        extractorApi = ExtractorApi(api_key=SEC_API_KEY)
-        risk_factors = extractorApi.get_section(filing['linkToFilingDetails'], '1A', 'text')
-        return f"### 10-K Summary: {filing.get('companyName')}\n- **Filed On:** {filing.get('filedAt')}\n- **Risks:** {risk_factors[:1000]}..."
+        risk_factors = ExtractorApi(api_key=SEC_API_KEY).get_section(filing['linkToFilingDetails'], '1A', 'text')
+        return f"### 10-K Summary: {filing.get('companyName')}\n- **Risks:** {risk_factors[:1000]}..."
     except Exception as e: return f"Error fetching SEC data: {e}"
-
 
 @tool("Financial Modeling Prep Tool")
 def fmp_tool(symbol: str, config: dict | None = None) -> str:
@@ -116,7 +122,6 @@ def fmp_tool(symbol: str, config: dict | None = None) -> str:
         return f"### Financial Profile: {d.get('companyName')}\n- **Price:** ${d.get('price')}\n- **Market Cap:** ${d.get('mktCap'):,}"
     except Exception as e: return f"Error with FMP tool: {e}"
 
-
 @tool("Recent News Fetcher")
 def news_tool(company_name: str, config: dict | None = None) -> str:
     """Fetches recent news articles for a given company name."""
@@ -126,32 +131,29 @@ def news_tool(company_name: str, config: dict | None = None) -> str:
         articles = NewsApiClient(api_key=NEWSAPI_KEY).get_everything(q=company_name, language="en", sort_by="publishedAt", page_size=5).get('articles', [])
         if not articles: return f"No recent news for {company_name}."
         return f"### Recent News for {company_name}:\n\n" + "\n\n".join(
-            f"- **Title:** {a['title']}\n  **Source:** {a['source']['name']}\n  **Summary:** {a.get('description', 'N/A')}"
+            f"- **Title:** {a['title']}\n  **Summary:** {a.get('description', 'N/A')}"
             for a in articles
         )
     except Exception as e: return f"Error fetching news: {e}"
-
 
 @tool("Wikipedia Company Scraper")
 def wikipedia_company_tool(company_name: str, config: dict | None = None) -> str:
     """Extracts key company data from a Wikipedia infobox."""
     try:
-        response = requests.get(f"https://en.wikipedia.org/wiki/{company_name.replace(' ', '_')}", headers={"User-Agent": "CrewAI/1.0"})
+        response = requests.get(f"https://en.wikipedia.org/wiki/{company_name.replace(' ', '_')}", headers={"User-Agent": "CrewAI-Agent/1.0"})
         response.raise_for_status()
         soup = BeautifulSoup(response.text, "html.parser")
         infobox = soup.find("table", {"class": "infobox vcard"})
         if not infobox: return f"No Wikipedia infobox for {company_name}."
         summary = f"### Wikipedia Profile: {company_name}\n\n"
         for row in infobox.find_all("tr"):
-            header = row.find("th")
-            data = row.find("td")
+            header, data = row.find("th"), row.find("td")
             if header and data:
                 key = re.sub(r'\[\d+\]', '', header.get_text()).strip()
                 value = re.sub(r'\[\d+\]', '', data.get_text(separator=', ', strip=True)).strip()
                 if len(value) < 200: summary += f"- **{key}:** {value}\n"
         return summary
     except Exception as e: return f"Error fetching Wikipedia page: {e}"
-
 
 
 

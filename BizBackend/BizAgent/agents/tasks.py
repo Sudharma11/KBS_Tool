@@ -1,120 +1,147 @@
 from crewai import Task
-
-from .agents import (
+from BizAgent.agents.agents import (
     url_scrapper, 
     url_analyzer, 
-    pdf_analyzer, 
-    financial_report_generator, 
     linkedin_agent,
     company_researcher,
     competitor_analyst,
     finance_analyst,
     market_analyst,
-    news_gatherer
+    news_gatherer,
+    financial_report_generator,
+    pdf_analyzer
+)
+from BizAgent.tools.tools import (
+    web_scraping_tool,
+    serpapi_search_tool,
+    fetch_pdf_content, 
+    linkedin_insights_tool
 )
 
-# --- Sales Intelligence Tasks ---
+# --- Sales Intelligence Tasks (for secondary analysis) ---
 
 company_task = Task(
-    description="Research '{company_name}' for a detailed overview: founding, industry, offerings, size, and executives.",
+    description="Research the company '{company_name}' for a detailed overview: founding, industry, offerings, size, and executives.",
     expected_output="A markdown report with a comprehensive company profile.",
-    agent=company_researcher,
+    agent=company_researcher
 )
 
 competitor_task = Task(
     description="Analyze the top 3-5 competitors for '{company_name}', detailing their market position, strengths, and weaknesses.",
     expected_output="A markdown report detailing the competitive landscape.",
-    agent=competitor_analyst,
+    agent=competitor_analyst
 )
 
 finance_task = Task(
-    description="Conduct a financial analysis of '{company_name}', adapting for public (using FMP/EDGAR) or private (using web search) status.",
-    expected_output="A detailed financial summary in markdown.",
-    agent=finance_analyst,
+    description=(
+        "Conduct a comprehensive financial analysis for '{company_name}'. "
+        "If a ticker symbol '{ticker_symbol}' is provided, use it. Otherwise, you MUST first use web search to find the correct ticker symbol for the company. "
+        "Then, you MUST use the Yahoo Finance tool to fetch the Balance Sheet, Income Statement, and Cash Flow statement. "
+        "Finally, based on ALL available data (including other agents' context), you MUST answer the specific financial questions provided in the expected output."
+    ),
+    expected_output="""
+    A detailed, well-structured financial report in markdown format that answers the following questions based on the fetched financial data:
+    1. Provide a summary of the financial data, including profit percentages and key performance indicators for the current year.
+    2. Generate a financial report for the latest year with detailed insights.
+    3. How was the financial performance throughout the year?
+    4. What was the overall topline and bottomline revenue for the current year?
+    5. What was the overall profit margin for the current year?
+    6. Provide quarterly revenue and profit margins for the current year.
+    7. Which services or solutions brought the highest revenue and profits?
+    8. Which regions performed well in terms of overall revenues?
+    9. Specify the investments made during the current year.
+    10. Highlight the departments or divisions that underperformed.
+    11. How does the company perform in terms of sustainability and ESG goals?
+    12. List top initiatives for attracting and retaining talent.
+    13. Did the company retrench any employees during the year?
+    14. Explain each department or function mentioned in the report, providing insights about performance.
+    15. Describe management discussions, key takeaways, and the financial condition of the company, along with operational results.
+    16. Compare the company's performance in 2024 with 2023.
+    17. Are there any ongoing legal battles involving the company?
+    18. Summarize market sentiment regarding the company.
+    
+    Note: If an answer cannot be found, state 'Answer not found in available financial data.' Do not hallucinate.
+    """,
+    agent=finance_analyst
 )
 
 market_task = Task(
     description="Analyze the market for '{company_name}', including size, CAGR, trends, and opportunities.",
     expected_output="A structured market analysis report in markdown.",
-    agent=market_analyst,
+    agent=market_analyst
 )
 
 news_task = Task(
     description="Gather and summarize the top 3-5 recent news articles for '{company_name}', including sentiment and business impact.",
     expected_output="A bulleted list of recent news summaries in markdown.",
-    agent=news_gatherer,
+    agent=news_gatherer
 )
 
-# --- IT & Financial Analysis Tasks (Corrected Workflow) ---
+# --- IT & LinkedIn Analysis Tasks (for primary URL report) ---
 
 url_scrape_task = Task(
-    description=(
-        "Thoroughly scrape the company website {url} to gather information on its business and strategy. "
-        "Crucially, identify the official name of the company from the website content."
-    ),
-    expected_output=(
-        "A detailed report on the company's performance and strategy, which MUST include a final line with the official company name. "
-        "Example: 'Official Company Name: Monogram Health'"
-    ),
-    agent=url_scrapper,
+    description="Scrape the website {url} and perform web searches to gather data on the company's business performance, challenges, and strategy.",
+    expected_output="A detailed report on the company's performance, challenges, and strategic focus.",
+    agent=url_scrapper
 )
 
-# Corrected: This task is now split into two for reliability
-find_linkedin_profile_task = Task(
+linkedin_task = Task(
     description=(
-        "You will be given context containing an official company name. "
-        "Your ONLY job is to use your search tool with the query '[Official Company Name] LinkedIn page' to find their official LinkedIn company URL. "
-        "From this URL (e.g., 'https://www.linkedin.com/company/monogram-health'), you must extract and return ONLY the unique 'universal name' (e.g., 'monogram-health')."
+        "You have been provided with the LinkedIn universal name: '{linkedin_name}'. "
+        "You MUST use this name as the input for the LinkedIn Insights Tool to perform a deep analysis. "
+        "Analyze the results to create a structured report."
     ),
-    expected_output=(
-        "A single string containing only the LinkedIn universal name. For example: 'monogram-health'"
-    ),
-    agent=linkedin_agent,
-    context=[url_scrape_task],
-)
-
-analyze_linkedin_profile_task = Task(
-    description=(
-        "You will be given context containing a LinkedIn universal name. "
-        "Use the `linkedin_insights_tool` with this exact universal name to fetch the company's data. "
-        "Then, provide a comprehensive summary of the insights found in the JSON response."
-    ),
-    expected_output=(
-        "A markdown summary of the company's LinkedIn profile and recent post activity, based on the data retrieved."
-    ),
-    agent=linkedin_agent,
-    context=[find_linkedin_profile_task], 
+    expected_output="A structured markdown report summarizing the key insights from the LinkedIn analysis, including a company summary and recent post themes.",
+    tools=[linkedin_insights_tool],
+    agent=linkedin_agent
 )
 
 url_analyze_task = Task(
     description=(
-        "Synthesize the scraped web content (from the first task) AND the LinkedIn analysis (from the third task) into a single, comprehensive report. "
-        "Your report must integrate insights from both sources to provide a cohesive strategic analysis."
+        "Synthesize the scraped web content from the URL {url} and the structured LinkedIn analysis into a single, comprehensive report. "
+        "Your report must integrate insights from both sources to cover the company's technology, business strategy, and key takeaways from their LinkedIn presence."
     ),
-    expected_output="A single, cohesive markdown report that combines web and LinkedIn insights into a final strategic analysis.",
+    expected_output="A single, cohesive markdown report that combines web and LinkedIn insights into a strategic analysis, including a final executive summary.",
     agent=url_analyzer,
-    context=[url_scrape_task, analyze_linkedin_profile_task],
+    context=[url_scrape_task, linkedin_task]
 )
 
 
-# Other tasks
+# --- PDF Analysis Tasks ---
+
 pdf_reading_task = Task(
-    description="Extract all text from the PDF at {pdf_path}.",
-    expected_output="A string containing all extracted PDF text.",
-    agent=pdf_analyzer,
+    description="Extract all text content from the PDF located at the path: {pdf_path}.",
+    expected_output="A single string containing all the extracted text from the PDF.",
+    tools=[fetch_pdf_content],
+    agent=pdf_analyzer
 )
 
 pdf_analyze_task = Task(
-    description="Analyze the text from the PDF at {pdf_path}, identify the company name, and supplement with web research to create a full technology report.",
-    expected_output="A detailed technology-focused report based on the PDF content and web research.",
+    description=(
+        "Analyze the extracted text from the PDF at {pdf_path} to create a comprehensive technology-focused report. "
+        "First, identify the company name from the document. Then, use that name to search the web for supplementary information."
+    ),
+    expected_output=(
+        "A detailed technology-focused report including a company overview, a technology SWOT analysis, "
+        "recommendations for IT services, a financial summary, and the latest news headlines."
+    ),
     agent=pdf_analyzer,
+    tools=[serpapi_search_tool]
 )
 
+
+# --- Final Report Synthesis Task ---
+
 generate_financial_task = Task(
-    description="Synthesize all provided research (company, competitor, market, news) for '{company_name}' into a final, context-aware financial report.",
-    expected_output="A comprehensive financial report in markdown, integrating all research context.",
+    description=(
+        "Synthesize all provided research (company overview, competitor analysis, market trends, recent news, and the detailed financial analysis) "
+        "for '{company_name}' into a final, comprehensive, and context-aware financial report."
+    ),
+    expected_output=(
+        "A comprehensive financial report in markdown, integrating all research context and answering all specified financial questions in a polished, professional format."
+    ),
     agent=financial_report_generator,
-    context=[company_task, competitor_task, finance_task, market_task, news_task],
+    context=[company_task, competitor_task, finance_task, market_task, news_task]
 )
 
 
