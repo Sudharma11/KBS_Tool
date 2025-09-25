@@ -5,9 +5,12 @@ import requests
 import yfinance as yf
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
-from PyPDF2 import PdfReader
+# Corrected: Replaced deprecated PyPDF2 with the modern pypdf library
+from pypdf import PdfReader
 from crewai_tools import tool
 from dotenv import load_dotenv
+# Corrected: Using the modern 'ddgs' library directly instead of the langchain wrapper
+from ddgs import DDGS
 
 # Import services with fallbacks
 try:
@@ -30,8 +33,50 @@ NEWSAPI_KEY = os.getenv("NEWSAPI_KEY")
 SERPAPI_KEY = os.getenv("SERPAPI_KEY")
 
 
-# --- Tool Definitions ---
+# --- NEW: Smart Search Tool with Fallback ---
+@tool("Smart Web Search")
+def smart_search_tool(query: str, config: dict | None = None) -> str:
+    """
+    Performs a web search using DuckDuckGo as the primary engine.
+    If it fails, it automatically falls back to using SerpAPI for the search.
+    Use this for all general web search needs.
+    """
+    print(f"--- Performing smart search for: {query} ---")
+    try:
+        print("--- Trying DuckDuckGo Search (direct DDGS)... ---")
+        with DDGS() as ddgs:
+            # Using the modern ddgs library for more reliable results
+            results = [r for r in ddgs.text(query, max_results=5)]
+        
+        if results:
+            formatted_results = "\n\n".join(
+                f"- Title: {r.get('title', 'N/A')}\n  URL: {r.get('href', 'N/A')}\n  Snippet: {r.get('body', 'N/A')}"
+                for r in results
+            )
+            return f"### Search Results for '{query}':\n\n{formatted_results}"
+        
+        print("--- DuckDuckGo returned no results, falling back to SerpAPI. ---")
+    except Exception as e:
+        print(f"--- DuckDuckGo Search failed: {e}. Falling back to SerpAPI. ---")
 
+    # Fallback to SerpAPI
+    if not SERPAPI_KEY:
+        return "Error: DuckDuckGo search failed and SERPAPI_KEY is not set for fallback."
+    try:
+        print("--- Trying SerpAPI Search... ---")
+        from serpapi import GoogleSearch
+        search = GoogleSearch({"q": query, "api_key": SERPAPI_KEY, "num": 5})
+        results = search.get_dict().get("organic_results", [])
+        if not results:
+            return f"No search results found for: {query} from either search engine."
+        return f"### Search Results for '{query}':\n\n" + "\n\n".join(
+            f"- **Title:** {r.get('title', 'N/A')}\n  **Snippet:** {r.get('snippet', 'N/A')}"
+            for r in results
+        )
+    except Exception as e:
+        return f"An error occurred during the SerpAPI fallback search: {e}"
+
+# --- Other Tool Definitions ---
 @tool("Yahoo Finance Tool")
 def yahoo_finance_tool(ticker: str, config: dict | None = None) -> str:
     """Fetches financial statements (Balance Sheet, Income Statement, Cash Flow) for a stock ticker from Yahoo Finance."""
@@ -59,26 +104,13 @@ def web_scraping_tool(url: str, config: dict | None = None) -> str:
     except requests.RequestException as e:
         return f"Error: Could not retrieve content from {url}: {e}"
 
-@tool("SerpAPI Google Search")
-def serpapi_search_tool(query: str, config: dict | None = None) -> str:
-    """Performs a Google search using the SerpAPI service to get real-time results."""
-    if not SERPAPI_KEY: return "Error: SERPAPI_KEY is not set."
-    try:
-        from serpapi import GoogleSearch
-        results = GoogleSearch({"q": query, "api_key": SERPAPI_KEY, "num": 5}).get_dict().get("organic_results", [])
-        if not results: return f"No search results for: {query}"
-        return f"### Search Results for '{query}':\n\n" + "\n\n".join(
-            f"- **Title:** {r.get('title', 'N/A')}\n  **Snippet:** {r.get('snippet', 'N/A')}"
-            for r in results
-        )
-    except Exception as e: return f"Error during SerpAPI search: {e}"
-
 @tool("PDF Content Extractor")
 def fetch_pdf_content(pdf_path: str, config: dict | None = None) -> str:
     """Extracts all text content from a local PDF file given its file path."""
     try:
         with open(pdf_path, 'rb') as f:
-            text = '\n'.join(p.extract_text() for p in PdfReader(f).pages if p.extract_text())
+            pdf = PdfReader(f)
+            text = '\n'.join(page.extract_text() for page in pdf.pages if page.extract_text())
         return re.sub(r'\s+', ' ', text).strip()
     except Exception as e: return f"Error reading PDF {pdf_path}: {e}"
 
@@ -145,7 +177,7 @@ def wikipedia_company_tool(company_name: str, config: dict | None = None) -> str
         soup = BeautifulSoup(response.text, "html.parser")
         infobox = soup.find("table", {"class": "infobox vcard"})
         if not infobox: return f"No Wikipedia infobox for {company_name}."
-        summary = f"### Wikipedia Profile: {company_name}\n\n"
+        summary = f"### Wikipedia Profile: {company_name}:\n\n"
         for row in infobox.find_all("tr"):
             header, data = row.find("th"), row.find("td")
             if header and data:
@@ -154,7 +186,6 @@ def wikipedia_company_tool(company_name: str, config: dict | None = None) -> str
                 if len(value) < 200: summary += f"- **{key}:** {value}\n"
         return summary
     except Exception as e: return f"Error fetching Wikipedia page: {e}"
-
 
 
 #--------------------------------------------------------------------------------------------

@@ -177,7 +177,7 @@ PyNaCl==1.5.0
 pypandoc==1.13
 pyparsing==3.1.2
 pypdf==4.3.1
-PyPDF2==3.0.1
+# PyPDF2==3.0.1
 PyPika==0.48.9
 pyproject_hooks==1.1.0
 pyreadline3==3.4.1
@@ -211,6 +211,7 @@ semantic-version==2.10.0
 semver==3.0.2
 setuptools==74.1.0
 shapely==2.0.4
+ddgs
 shellingham==1.5.4
 six==1.16.0
 smmap==5.0.1
