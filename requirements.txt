@@ -1,0 +1,34 @@
+# API
+fastapi
+uvicorn
+pydantic
+pydantic-settings
+python-dotenv
+
+# AI / LLM
+google-generativeai
+langchain
+langchain-core
+langchain-community
+langchain-google-genai
+langgraph
+groq
+
+# Scraping
+requests
+beautifulsoup4
+lxml
+googlesearch-python
+
+# Data
+pandas
+yfinance
+
+# Document generation
+python-docx
+
+# Utilities
+Levenshtein
+typing_extensions
+litellm
+

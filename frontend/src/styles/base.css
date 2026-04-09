@@ -1,0 +1,51 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: #000000;
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* sharper card outlines + subtle shadows */
+.comparison-header,
+.comparison-form,
+.company-card,
+.predefined-data-toggle,
+.leaders-section,
+.download-section-modern,
+.analysis-summary-section,
+.preview-modal-content {
+  border-radius: 2px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.page-wrapper {
+  min-height: 100vh;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-size: 16px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-family: var(--font);
+}

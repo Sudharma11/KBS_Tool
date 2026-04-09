@@ -1,0 +1,66 @@
+@media (max-width: 900px) {
+  .companies-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .vs-separator {
+    margin: 0 auto;
+    transform: rotate(90deg);
+  }
+
+  .comparison-form {
+    padding: 24px;
+  }
+
+  .comparison-header h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .comparison-container,
+  .results-container {
+    padding: 0 16px 48px;
+  }
+
+  .navbar-inner {
+    padding: 0 16px;
+  }
+
+  .comparison-header {
+    padding: 36px 0 28px;
+  }
+
+  .comparison-header h2 {
+    font-size: 24px;
+  }
+
+  .download-grid {
+    grid-template-columns: 1fr;
+    padding: 20px 16px;
+  }
+
+  .download-header {
+    padding: 20px 16px;
+  }
+
+  .leaders-section {
+    padding: 20px 16px;
+  }
+
+  .preview-footer {
+    flex-direction: column;
+  }
+
+  .toggle-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .preview-modal-content.large-preview {
+    width: 98%;
+    height: 88vh;
+  }
+}
