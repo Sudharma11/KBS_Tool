@@ -1,1 +1,0 @@
-Markdown report saved at media/financial_report.md
